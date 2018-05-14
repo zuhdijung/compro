@@ -57,7 +57,7 @@ body{
 	}
 	.header{
 		/* The image used */
-	    background-image: url('asset/images/bg-header.jpg');
+	    background-image: url('http://localhost/compro/asset/images/bg-header.jpg');
 
 	    /* Set a specific height */
 	    min-height: 300px; 
@@ -159,7 +159,7 @@ body{
 		padding: 0 0 20px 0;
 	}
 	.testimoni-left{
-		background:url('asset/images/bg-testimoni.jpg');
+		background:url('http://localhost/compro/asset/images/bg-testimoni.jpg');
 		background-position: center;
 		background-size: cover;
 		height: 250px;
@@ -198,7 +198,7 @@ body{
 	}
 	.kontak{
 		margin-top: -7px;
-		background:url('asset/images/bg-kontak.jpeg');
+		background:url('http://localhost/compro/asset/images/bg-kontak.jpeg');
 		background-position: center;
 		background-size: cover;
 		height: 480px;	
@@ -303,7 +303,7 @@ body{
 	}
 	.header{
 		/* The image used */
-	    background-image: url('asset/images/bg-header.jpg');
+	    background-image: url('http://localhost/compro/asset/images/bg-header.jpg');
 
 	    /* Set a specific height */
 	    min-height: 500px; 
@@ -406,7 +406,7 @@ body{
 		padding-bottom: 0;
 	}
 	.testimoni-left{
-		background:url('asset/images/bg-testimoni.jpg');
+		background:url('http://localhost/compro/asset/images/bg-testimoni.jpg');
 		background-position: center;
 		background-size: cover;
 		height: 550px;
@@ -445,7 +445,7 @@ body{
 	}
 	.kontak{
 		margin-top: -7px;
-		background:url('asset/images/bg-kontak.jpeg');
+		background:url('http://localhost/compro/asset/images/bg-kontak.jpeg');
 		background-position: center;
 		background-size: cover;
 		height: 550px;	
