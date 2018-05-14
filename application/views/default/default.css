@@ -1,0 +1,514 @@
+/*
+	CSS Created by Zuhdi Robbani
+	URL : belajarkuy.com
+*/
+body{
+	font-family: 'Lato', sans-serif;
+}
+@media only screen and (min-width : 200px) {
+	.navbar-default{
+		border: none;
+		height: 80px;
+		padding: 0 0 0 0;
+	}
+	.navbar-default .navbar-brand{
+		font-size: 36px;
+		margin-top: 20px;
+		font-weight: bolder;
+		margin-right: 100px;
+		color: #333;
+	}
+	.navbar-toggle {
+	    position: relative;
+	    float: right;
+	    padding: 9px 10px;
+	    margin-top: -40px;
+	    margin-right: 15px;
+	    margin-bottom: 8px;
+	    background-color: transparent;
+	    background-image: none;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	}
+	.logo img{
+		margin-top: -30px;
+		width: 180px;
+	}
+	.navbar-default .navbar-brand .blued{
+		color: #416eaf;
+	}
+	.navbar-default .navbar-nav>li>a {
+	    color: #969595;
+	    font-family: 'Lato', sans-serif;
+	    font-size: 14px;
+	    font-weight: bolder;
+	    letter-spacing: 1px;
+	    padding: 10px 30px;
+	    background-color: #fff;
+	    border-top: none;
+	}
+	.navbar-default .navbar-nav>li>a:hover {
+	    color: #342764;
+	    background-color: #f8f8f8;
+	}
+	.navbar-default .navbar-nav>li>a.active {
+	    color: #342764;
+	    background-color: #f8f8f8;
+	}
+	.header{
+		/* The image used */
+	    background-image: url('asset/images/bg-header.jpg');
+
+	    /* Set a specific height */
+	    min-height: 300px; 
+	    /* Create the parallax scrolling effect */
+	    background-attachment: fixed;
+	    background-position: right;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    margin-top: 50px;
+		position: relative;
+	}
+	.header .overlay{
+		background: rgba(52,39,100,0.65);
+	    height: 300px;
+	    z-index: 2;
+	}
+	.header .overlay h1{
+		font-size: 48px;
+		text-align: center;
+		opacity: 1;
+		color: #fff;
+		margin-top: 100px;
+		font-weight: bolder;
+	}
+	.brand-portfolio{
+		background-color: #f9f9f9;
+		border-top: 1px solid #eae9e9;
+		border-bottom: 1px solid #eae9e9;
+		padding: 5px 0;
+	}
+	.featured{
+		background-color: #fff;
+		border-bottom: 1px solid #eae9e9;
+		padding: 10px 0;
+	}
+	.featured h2{
+		font-size: 36px;
+		font-weight: bold;
+	}
+	.featured h2 .blued{
+		color: #00eaff;
+	}
+	.featured p{
+		color: #808090;
+		font-size: 16px;
+		font-weight: lighter;
+	}
+	.border-blue{
+		width: 80px;
+		border-top: 2px solid #342764;
+		margin: 30px 0 30px 0;
+	}
+	.btn-blued{
+		background-color: #342764;
+		padding: 5px 10px;
+		font-size: 14px;
+		color: #fff;
+		border: none;
+		font-weight: bolder;
+	}
+	.btn-blued:hover{
+		background-color: #5179b0;
+	}
+	.service{
+		background-color: #f9f9f9;
+		padding: 20px 0 30px 0;
+		border-bottom: 1px solid #eae9e9;
+	}
+	.service h2{
+		font-size: 36px;
+		font-weight: bolder;
+	}
+	.service .bordered{
+		margin: 15px auto;
+		border-top: 2px solid #333;	
+		width: 70px;
+	}
+	.service .service-text{
+		font-size: 16px;
+	}
+	.detail-service{
+		background-color: #fff;
+		border:1px solid #eae9e9;
+		padding: 20px 10px;
+	}
+	.detail-service img{
+		width: 150px;
+	}
+	.detail-service h3{
+		font-size: 24px;
+		font-weight: bolder;
+	}
+	.detail-service p{
+		font-size: 16px;
+		color: #808090;
+	}
+	.testimoni{
+		border-bottom: 1px solid #eae9e9;
+		padding: 0 0 20px 0;
+	}
+	.testimoni-left{
+		background:url('asset/images/bg-testimoni.jpg');
+		background-position: center;
+		background-size: cover;
+		height: 250px;
+		margin-left: -15px;
+	}
+	.container-fluid-full {
+	    padding-right: 0px;
+	    padding-left: 0px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+	.testimoni-left .overlay{
+		background: rgba(52,39,100,0.75);
+	    height: 100%;
+	    z-index: 2;
+	}
+	.testimoni-left .overlay h2{
+		font-size: 24px;
+		text-align: center;
+		opacity: 1;
+		color: #fff;
+		position: absolute;
+		margin: 120px 0 0 50px;
+		font-weight: bold;
+	}
+	.testimoni-client{
+		padding: 20px 0 0 0;
+		text-align: center;
+	}
+	.testimoni-client p{
+		color: #808090;
+		font-size: 16px;
+	}
+	.testimoni-client img{
+		width: 150px;
+	}
+	.kontak{
+		margin-top: -7px;
+		background:url('asset/images/bg-kontak.jpeg');
+		background-position: center;
+		background-size: cover;
+		height: 480px;	
+	}
+	.kontak .overlay{
+		background: rgba(30,24,64,0.95);
+	    height: 100%;
+	    z-index: 2;
+	    padding: 20px 0 0 0;
+	}
+	.kontak .overlay h2{
+		font-size: 36px;
+		opacity: 1;
+		color: #fff;
+		font-weight: bolder;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.kontak .overlay .form-control{
+		background:transparent;
+		border-radius: 0;
+		color: #fff;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+	}
+	.kontak .overlay .form-control::placeholder{
+		color: #fff;
+		font-size: 16px;
+	}
+	.kontak .overlay textarea.form-control{
+		background:transparent;
+		color: #fff;
+		border-radius: 0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+		min-height: 100px;
+		min-width: 100%;
+		max-height: 100px;
+		max-width: 100%;
+	}
+	.kontak .overlay .btn-blued{
+		background-color: #1cbbb1;
+		border-radius: 0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+	}
+	.footer{
+		background-color: #121316;
+		padding: 35px 0;
+	}
+	.footer .copyright{
+		color: #787878;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+	.footer .copyright a{
+		color: #787878;
+	}
+	.footer .copyright a:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+}
+@media only screen and (min-width : 480px) {
+	.navbar-default{
+		border: none;
+		height: 100px;
+		padding: 0 0 0 0;
+	}
+	.navbar-default .navbar-brand{
+		font-size: 48px;
+		margin-top: 20px;
+		font-weight: bolder;
+		margin-right: 100px;
+		color: #333;
+	}
+	.navbar-default .navbar-brand .blued{
+		color: #416eaf;
+	}
+	.navbar-default .navbar-nav>li>a {
+	    color: #969595;
+	    font-family: 'Lato', sans-serif;
+	    font-size: 14px;
+	    font-weight: bolder;
+	    letter-spacing: 1px;
+	    padding: 40px 30px;
+	}
+	.navbar-default .navbar-nav>li>a:hover {
+	    color: #342764;
+	    background-color: #f8f8f8;
+	}
+	.navbar-default .navbar-nav>li>a.active {
+	    color: #342764;
+	    background-color: #f8f8f8;
+	}
+	.logo img{
+		margin-top: -20px;
+		width: 200px;
+	}
+	.header{
+		/* The image used */
+	    background-image: url('asset/images/bg-header.jpg');
+
+	    /* Set a specific height */
+	    min-height: 500px; 
+	    /* Create the parallax scrolling effect */
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    margin-top: 100px;
+		position: relative;
+	}
+	.header .overlay{
+		background: rgba(52,39,100,0.65);
+	    height: 500px;
+	    z-index: 2;
+	}
+	.header .overlay h1{
+		font-size: 72px;
+		text-align: center;
+		opacity: 1;
+		color: #fff;
+		position: absolute;
+		margin-top: 200px;
+		font-weight: bolder;
+	}
+	.brand-portfolio{
+		background-color: #f9f9f9;
+		border-top: 1px solid #eae9e9;
+		border-bottom: 1px solid #eae9e9;
+		padding: 20px 0;
+	}
+	.featured{
+		background-color: #fff;
+		border-bottom: 1px solid #eae9e9;
+		padding: 100px 0 100px 0;
+	}
+	.featured h2{
+		font-size: 48px;
+		font-weight: bold;
+	}
+	.featured h2 .blued{
+		color: #00eaff;
+	}
+	.featured p{
+		color: #808090;
+		font-size: 18px;
+		font-weight: lighter;
+	}
+	.border-blue{
+		width: 120px;
+		border-top: 2px solid #342764;
+		margin: 30px 0 30px 0;
+	}
+	.btn-blued{
+		background-color: #342764;
+		padding: 10px 25px;
+		font-size: 16px;
+		color: #fff;
+		border: none;
+		font-weight: bolder;
+	}
+	.btn-blued:hover{
+		background-color: #5179b0;
+	}
+	.service{
+		background-color: #f9f9f9;
+		padding: 120px 0 100px 0;
+		border-bottom: 1px solid #eae9e9;
+	}
+	.service h2{
+		font-size: 48px;
+		font-weight: bolder;
+	}
+	.service .bordered{
+		margin: 35px auto;
+		border-top: 2px solid #333;	
+		width: 110px;
+	}
+	.service .service-text{
+		font-size: 16px;
+	}
+	.detail-service{
+		background-color: #fff;
+		border:1px solid #eae9e9;
+		padding: 20px 10px;
+	}
+	.detail-service img{
+		width: 150px;
+	}
+	.detail-service h3{
+		font-size: 24px;
+		font-weight: bolder;
+	}
+	.detail-service p{
+		font-size: 16px;
+		color: #808090;
+	}
+	.testimoni{
+		border-bottom: 1px solid #eae9e9;
+		padding-bottom: 0;
+	}
+	.testimoni-left{
+		background:url('asset/images/bg-testimoni.jpg');
+		background-position: center;
+		background-size: cover;
+		height: 550px;
+		margin-left: -15px;
+	}
+	.container-fluid-full {
+	    padding-right: 0px;
+	    padding-left: 0px;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+	.testimoni-left .overlay{
+		background: rgba(52,39,100,0.75);
+	    height: 100%;
+	    z-index: 2;
+	}
+	.testimoni-left .overlay h2{
+		font-size: 48px;
+		text-align: center;
+		opacity: 1;
+		color: #fff;
+		position: absolute;
+		margin: 240px 0 0 60px;
+		font-weight: bold;
+	}
+	.testimoni-client{
+		padding: 20px 0 0 0;
+		text-align: center;
+	}
+	.testimoni-client p{
+		color: #808090;
+		font-size: 24px;
+	}
+	.testimoni-client img{
+		width: 180px;
+	}
+	.kontak{
+		margin-top: -7px;
+		background:url('asset/images/bg-kontak.jpeg');
+		background-position: center;
+		background-size: cover;
+		height: 550px;	
+	}
+	.kontak .overlay{
+		background: rgba(30,24,64,0.95);
+	    height: 100%;
+	    z-index: 2;
+	    padding: 50px 0 0 0;
+	}
+	.kontak .overlay h2{
+		font-size: 48px;
+		opacity: 1;
+		color: #fff;
+		font-weight: bolder;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	.kontak .overlay .form-control{
+		background:transparent;
+		border-radius: 0;
+		color: #fff;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+	}
+	.kontak .overlay .form-control::placeholder{
+		color: #fff;
+		font-size: 16px;
+	}
+	.kontak .overlay textarea.form-control{
+		background:transparent;
+		color: #fff;
+		border-radius: 0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+		min-height: 100px;
+		min-width: 100%;
+		max-height: 100px;
+		max-width: 100%;
+	}
+	.kontak .overlay .btn-blued{
+		background-color: #1cbbb1;
+		border-radius: 0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		-o-border-radius: 0;
+	}
+	.footer{
+		background-color: #121316;
+		padding: 35px 0;
+	}
+	.footer .copyright{
+		color: #787878;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+	.footer .copyright a{
+		color: #787878;
+	}
+	.footer .copyright a:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+}
