@@ -13,43 +13,43 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="<?php echo base_url('administrator'); ?>">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="<?php echo base_url('administrator/dashboard/user');?>">
                         <i class="ti-user"></i>
                         <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="<?php echo base_url('administrator/dashboard/table');?>">
                         <i class="ti-view-list-alt"></i>
                         <p>Table List</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="<?php echo base_url('administrator/dashboard/typography');?>">
                         <i class="ti-text"></i>
                         <p>Typography</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="<?php echo base_url('administrator/dashboard/icons');?>">
                         <i class="ti-pencil-alt2"></i>
                         <p>Icons</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="<?php echo base_url('administrator/dashboard/maps');?>">
                         <i class="ti-map"></i>
                         <p>Maps</p>
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="<?php echo base_url('administrator/dashboard/notifications');?>">
                         <i class="ti-bell"></i>
                         <p>Notifications</p>
                     </a>
