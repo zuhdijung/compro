@@ -20,25 +20,25 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo base_url('administrator/dashboard/manage-user');?>">
+                    <a href="<?php echo base_url('administrator/user/manage-user');?>">
                         <i class="ti-user"></i>
                         <p>User</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/dashboard/article');?>">
+                    <a href="<?php echo base_url('administrator/article/manage');?>">
                         <i class="ti-text"></i>
                         <p>Artcile</p>
                     </a>
                 </li>
                  <li>
-                    <a href="<?php echo base_url('administrator/dashboard/galery');?>">
+                    <a href="<?php echo base_url('administrator/gallery/manage');?>">
                         <i class="ti-gallery"></i>
-                        <p>Galery</p>
+                        <p>Gallery</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/dashboard/menu');?>">
+                    <a href="<?php echo base_url('administrator/menu/manage');?>">
                         <i class="ti-menu"></i>
                         <p>Menu</p>
                     </a>
