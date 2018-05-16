@@ -33,9 +33,9 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <p>Settings</p>
+                            <a href="<?php echo base_url('administrator/dashboard/logout');?>">
+                                <i class="ti-power-off"></i>
+                                <p>Log Out</p>
                             </a>
                         </li>
                     </ul>

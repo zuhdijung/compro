@@ -43,12 +43,12 @@
                                 <h4 class="title">Login Administrator</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <?php echo form_open('')?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" value="">
+                                                <input type="text" class="form-control border-input" placeholder="Username" value="" name="username">
                                             </div>
                                         </div>
                                     </div>
@@ -56,17 +56,20 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input type="text" class="form-control border-input" placeholder="Password" value="">
+                                                <input type="Password" class="form-control border-input" placeholder="Password" value="" name="password">
                                             </div>
                                         </div>
                                     </div>
 
-                                    
+                                    		<?php 
+                                    		echo validation_errors();
+
+											?>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
                                     </div>
                                     <div class="clearfix"></div>
-                                </form>
+                               <?php echo form_close('')?>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,39 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+
                 <li>
+                    <a href="<?php echo base_url('administrator/dashboard/manage-user');?>">
+                        <i class="ti-user"></i>
+                        <p>User</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/dashboard/article');?>">
+                        <i class="ti-text"></i>
+                        <p>Artcile</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="<?php echo base_url('administrator/dashboard/galery');?>">
+                        <i class="ti-gallery"></i>
+                        <p>Galery</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/dashboard/menu');?>">
+                        <i class="ti-menu"></i>
+                        <p>Menu</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/dashboard/setting');?>">
+                        <i class="ti-settings"></i>
+                        <p>Setting</p>
+                    </a>
+                </li>
+
+                <!--<li>
                     <a href="<?php echo base_url('administrator/dashboard/user');?>">
                         <i class="ti-user"></i>
                         <p>User Profile</p>
@@ -59,6 +91,6 @@
                         <i class="ti-export"></i>
                         <p>Upgrade to PRO</p>
                     </a>
-                </li>
+                </li>-->
             </ul>
         </div>
