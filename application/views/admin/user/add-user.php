@@ -58,7 +58,7 @@
                                                         0 => 'writer', 
                                                         1 => 'admin'
                                                     );
-                                                    echo form_dropdown('permission',$options,'','class="form-control"');
+                                                    echo form_dropdown('permission',$options,'','class="form-control border-input"');
                                                 ?>
                                             </div>
                                         </div>
