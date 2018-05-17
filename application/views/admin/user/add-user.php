@@ -19,19 +19,43 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control border-input" placeholder="Home Address" >
+                                                <label>Username</label>
+                                                <input type="text" class="form-control border-input" placeholder="Username" >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>About Me</label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"></textarea>
+                                                <label>Password</label>
+                                                <input type="Password" class="form-control border-input" placeholder="Password" value="" name="password">
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="text" class="form-control border-input" placeholder="Email" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Permission</label>
+                                                <?php 
+                                                    $options = $permission = array(
+                                                        0 => 'writer', 
+                                                        1 => 'admin'
+                                                    );
+                                                    echo form_dropdown('permission', $options);
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Add User</button>
                                     </div>
