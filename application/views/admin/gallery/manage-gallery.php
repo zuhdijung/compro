@@ -26,8 +26,7 @@
                                         <tr>
                                             <td>abemazing</td>
                                             <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td><a href="<?php echo base_url('
-                                                  administrator/gallery/edit-gallery')?>">
+                                            <td><a href="<?php echo base_url('administrator/gallery/edit-gallery')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
@@ -36,8 +35,7 @@
                                         <tr>
                                             <td>minerva</td>
                                           <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td><a href="<?php echo base_url('
-                                                  administrator/gallery/edit-gallery')?>">
+                                            <td><a href="<?php echo base_url('administrator/gallery/edit-gallery')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>

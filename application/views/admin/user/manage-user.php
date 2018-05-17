@@ -27,8 +27,7 @@
                                             <td>abemazing</td>
                                             <td>rpmhslg@gmail.com</td>
                                             <td>Admin</td>
-                                            <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
@@ -38,8 +37,7 @@
                                             <td>minerva</td>
                                             <td>minervahooper@gmail.com</td>
                                             <td>User</td>
-                                            <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>     
@@ -48,8 +46,7 @@
                                             <td>rodriguez</td>
                                             <td>rodriguez@gmail.com</td>
                                             <td>User</td>
-                                             <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
@@ -58,8 +55,7 @@
                                             <td>philip</td>
                                             <td>philipchanney@gmail.com</td>
                                             <td>User</td>
-                                             <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
@@ -68,8 +64,7 @@
                                             <td>doris</td>
                                             <td>dorisgreene@gmail.com</td>
                                             <td>User</td>
-                                             <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
@@ -78,8 +73,7 @@
                                             <td>masonporter</td>
                                             <td>masonporter@gmail.com</td>
                                             <td>Admin</td>
-                                             <td> <a href="<?php echo base_url('
-                                                  administrator/user/edit-user')?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>

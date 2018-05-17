@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add User</h4>
+                                <h4 class="title">Edit User</h4>
                                 <div style="margin-top:25px">
                                         <a href="<?php echo base_url('administrator/user/manage-user')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Manage User</button>
                                     </div></a>
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Add User</button>
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Edit User</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 <?php echo form_close('')?>
