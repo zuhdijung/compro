@@ -23,13 +23,13 @@
                                         <tr>
                                             <td>abemazing</td>
                                             <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td><i class="ti-pencil"></i></td>
+                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
                                             
                                         </tr>
                                         <tr>
                                             <td>minerva</td>
                                           <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td><i class="ti-pencil"></i></td>
+                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
                                             
                                         </tr>
                                        
