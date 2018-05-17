@@ -37,8 +37,11 @@
                                             <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
                                             <td>20 May 2018</td>
                                             <td>abemazing</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
-
+                                            <td><a href="<?php echo base_url('
+                                                  administrator/article/edit-article')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
                                         </tr>
                                        
                                     </tbody>

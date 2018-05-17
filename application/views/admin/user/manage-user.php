@@ -27,37 +27,63 @@
                                             <td>abemazing</td>
                                             <td>rpmhslg@gmail.com</td>
                                             <td>Admin</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
+                                            <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
 
                                         </tr>
                                         <tr>
                                             <td>minerva</td>
                                             <td>minervahooper@gmail.com</td>
                                             <td>User</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>                                        </tr>
+                                            <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>     
+                                        </tr>
                                         <tr>
                                             <td>rodriguez</td>
                                             <td>rodriguez@gmail.com</td>
-                                            <td>User/td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
+                                            <td>User</td>
+                                             <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
                                         </tr>
                                         <tr>
                                             <td>philip</td>
                                             <td>philipchanney@gmail.com</td>
                                             <td>User</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
+                                             <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
                                         </tr>
                                         <tr>
                                             <td>doris</td>
                                             <td>dorisgreene@gmail.com</td>
                                             <td>User</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
+                                             <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
                                         </tr>
                                         <tr>
                                             <td>masonporter</td>
                                             <td>masonporter@gmail.com</td>
                                             <td>Admin</td>
-                                            <td><i class="ti-pencil"><i class="ti-trash"></i></td>
+                                             <td> <a href="<?php echo base_url('
+                                                  administrator/user/edit-user')?>">
+                                                <i class="ti-pencil"></i></a>
+                                                <i class="ti-trash"></i>
+                                                 </td>
+                                                 
                                         </tr>
                                     </tbody>
                                 </table>

@@ -26,4 +26,12 @@ class User extends CI_Controller {
         $this->load->view('admin/dashboard', $data);
 
     }
+    public function edit_user(){
+    	$data['path_content'] = 'admin/user/edit-user';
+    	if ($this->session->userdata('login_user') == FALSE) {
+    		redirect(base_url('administrator/dashboard/login'));
+    	}
+    	$this->load->view('admin/dashboard', $data);
+
+    }
 }
