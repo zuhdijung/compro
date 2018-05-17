@@ -8,6 +8,9 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">All User</h4>
+                                <div style="margin-top:25px">
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">add user</button>
+                                    </div>
                                 
                             </div>
                             <div class="content table-responsive table-full-width">

@@ -7,8 +7,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">All User</h4>
-                                
+                                <h4 class="title">All Article</h4>
+                                <div style="margin-top:25px">
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">add article</button>
+                                    </div>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-striped">
