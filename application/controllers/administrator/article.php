@@ -18,7 +18,7 @@ class Article extends CI_Controller {
         $this->load->view('admin/dashboard', $data);
     }
 
-    public function add(){
+    public function add_article(){
         $data['path_content'] = 'administrator/article/add-article';
         if($this->session->userdata('login_user') == FALSE){
             redirect(base_url('administrator/dashboard/login/'));

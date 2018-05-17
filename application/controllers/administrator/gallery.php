@@ -17,7 +17,7 @@ class Gallery extends CI_Controller {
 		}
 		$this->load->view('admin/dashboard', $data);
 	}
-	 public function add(){
+	 public function add_gallery(){
         $data['path_content'] = 'administrator/gallery/add-gallery';
         if($this->session->userdata('login_user') == FALSE){
             redirect(base_url('administrator/dashboard/login/'));
