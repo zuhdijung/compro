@@ -9,7 +9,7 @@
                             <div class="header">
                                 <h4 class="title">All Article</h4>
                                 <div style="margin-top:25px">
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">add article</button>
+                                        <a href="<?php echo base_url('administrator/article/add-article')?>"><button type="submit" class="btn btn-info btn-fill btn-wd">add article</button></a>
                                     </div>
                             </div>
                             <div class="content table-responsive table-full-width">

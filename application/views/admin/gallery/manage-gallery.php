@@ -9,7 +9,8 @@
                             <div class="header">
                                 <h4 class="title">All Gallery</h4>
                                 <div style="margin-top:25px">
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">add gallery</button>
+                                        <a href="<?php echo base_url('administrator/gallery/add-gallery')?>">
+                                            <button type="submit" class="btn btn-info btn-fill btn-wd">add gallery</button></a>
                                     </div>
                             </div>
                             <div class="content table-responsive table-full-width">

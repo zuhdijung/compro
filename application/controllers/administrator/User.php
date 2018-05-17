@@ -17,4 +17,13 @@ class User extends CI_Controller {
 		}
 		$this->load->view('admin/dashboard', $data);
 	}
+
+	 public function add(){
+        $data['path_content'] = 'administrator/user/add-user';
+        if($this->session->userdata('login_user') == FALSE){
+            redirect(base_url('administrator/dashboard/login/'));
+        }
+        $this->load->view('admin/dashboard', $data);
+
+    }
 }
