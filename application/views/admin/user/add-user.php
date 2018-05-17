@@ -32,6 +32,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Confirm Password</label>
+                                                <input type="Password" class="form-control border-input" placeholder="Confirm Your Password" value="" name="password">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -50,7 +58,7 @@
                                                         0 => 'writer', 
                                                         1 => 'admin'
                                                     );
-                                                    echo form_dropdown('permission', $options);
+                                                    echo form_dropdown('permission',$options,'','class="form-control"');
                                                 ?>
                                             </div>
                                         </div>
