@@ -31,6 +31,18 @@
                         <p>Artcile</p>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/article/category');?>">
+                        <i class="ti-list"></i>
+                        <p>Category</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/article/page');?>">
+                        <i class="ti-clipboard"></i>
+                        <p>Page</p>
+                    </a>
+                </li>
                  <li>
                     <a href="<?php echo base_url('administrator/gallery/manage');?>">
                         <i class="ti-gallery"></i>
