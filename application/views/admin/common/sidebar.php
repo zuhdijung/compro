@@ -32,13 +32,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/article/category');?>">
+                    <a href="<?php echo base_url('administrator/category/manage');?>">
                         <i class="ti-list"></i>
                         <p>Category</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/article/page');?>">
+                    <a href="<?php echo base_url('administrator/page/manage');?>">
                         <i class="ti-clipboard"></i>
                         <p>Page</p>
                     </a>
