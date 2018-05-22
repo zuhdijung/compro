@@ -24,20 +24,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Choose Category</label>
-                                                <?php 
-                                                    $options = $choose = array(
-                                                        0 => 'writer', 
-                                                        1 => 'admin'
-                                                    );
-                                                    echo form_dropdown('choose',$options,'','class="form-control border-input"');
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Add Category</button>
