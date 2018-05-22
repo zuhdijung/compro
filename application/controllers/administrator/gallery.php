@@ -12,24 +12,15 @@ class Gallery extends CI_Controller {
 
 	public function manage(){
 		$data['path_content'] = 'admin/gallery/manage-gallery';
-		if($this->session->userdata('login_user') == FALSE){
-			redirect(base_url('administrator/dashboard/login/'));
-		}
 		$this->load->view('admin/dashboard', $data);
 	}
 	 public function add_gallery(){
         $data['path_content'] = 'admin/gallery/add-gallery';
-        if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
         $this->load->view('admin/dashboard', $data);
 
     }
     public function edit_gallery(){
     	$data['path_content'] = 'admin/gallery/edit-gallery';
-    	 if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
         $this->load->view('admin/dashboard', $data);
     }
 }

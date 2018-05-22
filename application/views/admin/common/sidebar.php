@@ -7,7 +7,7 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Belajar Kuy
                 </a>
             </div>
 
@@ -32,13 +32,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/category/manage');?>">
+                    <a href="<?php echo base_url('administrator/article/manage-category');?>">
                         <i class="ti-list"></i>
                         <p>Category</p>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/page/manage');?>">
+                    <a href="<?php echo base_url('administrator/article/manage-page');?>">
                         <i class="ti-clipboard"></i>
                         <p>Page</p>
                     </a>

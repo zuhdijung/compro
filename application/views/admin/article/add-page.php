@@ -7,9 +7,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Edit Article</h4>
+                                <h4 class="title">Add Page</h4>
                                 <div style="margin-top:25px">
-                                        <a href="<?php echo base_url('administrator/page/manage')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Manage Page</button>
+                                        <a href="<?php echo base_url('administrator/article/manage-page')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Manage Page</button>
                                     </div></a>
                                 
                             </div>
@@ -20,7 +20,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title Page</label>
-                                                <input type="text" class="form-control border-input" placeholder="Home Address" >
+                                                <input type="text" class="form-control border-input" placeholder="Title Page" >
                                             </div>
                                         </div>
                                     </div>
@@ -33,8 +33,10 @@
                                         </div>
                                     </div>
 
+                                    
+
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Edit Page</button>
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Add Page</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 <?php echo form_close('')?>

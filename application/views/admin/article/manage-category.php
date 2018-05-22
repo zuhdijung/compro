@@ -9,7 +9,7 @@
                             <div class="header">
                                 <h4 class="title">All Category</h4>
                                 <div style="margin-top:25px">
-                                        <a href="<?php echo base_url('administrator/category/add-category')?>"><button type="submit" class="btn btn-info btn-fill btn-wd">add category</button></a>
+                                        <a href="<?php echo base_url('administrator/article/add-category')?>"><button type="submit" class="btn btn-info btn-fill btn-wd">add category</button></a>
                                     </div>
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -24,13 +24,13 @@
                                     <tbody>
                                         <tr>
                                             <td>Berita Hari Ini</td>
-                                            <td><a href="<?php echo base_url('administrator/category/edit-category')?>">
+                                            <td><a href="<?php echo base_url('administrator/article/edit-category')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td></tr>
                                                  <tr>
                                                  <td>Berita Hari Ini</td>
-                                            <td><a href="<?php echo base_url('administrator/category/edit-category')?>">
+                                            <td><a href="<?php echo base_url('administrator/article/edit-category')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>

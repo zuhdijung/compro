@@ -9,7 +9,7 @@
                             <div class="header">
                                 <h4 class="title">Edit Category</h4>
                                 <div style="margin-top:25px">
-                                        <a href="<?php echo base_url('administrator/category/manage')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Manage Category</button>
+                                        <a href="<?php echo base_url('administrator/article/manage-category')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Manage Category</button>
                                     </div></a>
                                 
                             </div>

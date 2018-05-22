@@ -12,25 +12,44 @@ class Article extends CI_Controller {
 
     public function manage(){
         $data['path_content'] = 'admin/article/manage-article';
-        if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
         $this->load->view('admin/dashboard', $data);
     }
 
     public function add_article(){
         $data['path_content'] = 'admin/article/add-article';
-        if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
         $this->load->view('admin/dashboard', $data);
 
     }
     public function edit_article(){
         $data['path_content'] = 'admin/article/edit-article';
-        if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
         $this->load->view('admin/dashboard', $data);
     }
+    public function manage_page(){
+        $data['path_content'] = 'admin/article/manage-page';
+        $this->load->view('admin/dashboard', $data);
+    }
+     public function add_page(){
+        $data['path_content'] = 'admin/article/add-page';
+        $this->load->view('admin/dashboard', $data);
+
+    }
+    public function edit_page(){
+        $data['path_content'] = 'admin/article/edit-page';
+        $this->load->view('admin/dashboard', $data);
+    }
+    public function manage_category(){
+        $data['path_content'] = 'admin/article/manage-category';
+        $this->load->view('admin/dashboard', $data);
+    }
+    public function add_category(){
+        $data['path_content'] = 'admin/article/add-category';
+        $this->load->view('admin/dashboard', $data);
+
+    }
+     public function edit_category(){
+        $data['path_content'] = 'admin/article/edit-category';
+        $this->load->view('admin/dashboard', $data);
+    }
+
+
 }
