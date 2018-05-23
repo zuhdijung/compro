@@ -24,20 +24,36 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Berita Hari Ini</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                                            <td>20 May 2018</td>
-                                            <td><a href="<?php echo base_url('administrator/article/edit-page')?>">
+                                        <?php 
+                                        if ($results != FALSE) {
+                                            foreach ($results as $row ) {
+                                                ?>
+                                                <tr>
+                                                    <td>
+                                                        <?php
+                                                        echo $row->title_page;
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        echo $row->page;
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        echo $row->date_page;
+                                                        ?>
+                                                    </td>
+                                                    <td><a href="<?php echo base_url('administrator/article/edit-page/'.$row->id_page)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <i class="ti-trash"></i>
+                                                <a href="<?php echo base_url('administrator/article/delete-page/'.$row->id_page)?>">
+                                                <i class="ti-trash"></i></a>
                                                  </td>
-                                        </tr>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                         ?>
                                        
                                     </tbody>
                                 </table>
@@ -45,10 +61,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                
-
 
                 </div>
             </div>

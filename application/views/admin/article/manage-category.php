@@ -22,23 +22,28 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        if ($results != FALSE) {
-                                            foreach ($results as $row ) {
-                                                ?>
-                                                <tr>
-
-                                            <td><?php
-                                            echo $row->category;
-                                            ?></td>
-                                            <td><a href="<?php echo base_url('administrator/article/edit-category/'.$row->id_category)?>">
-                                                <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/article/delete-category/'.$row->id_category)?>">
-                                                <i class="ti-trash"></i></a>
-                                                 </td></tr>
+                                       <?php
+                                       if ($results != FALSE) {
+                                           foreach ($results as $row) {
+                                               ?>
+                                               <tr>
+                                                   <td>
+                                                       <?php
+                                                       echo $row->category;
+                                                       ?>
+                                                   </td>
+                                                   
+                                                   <td>
+                                                       <a href="<?php echo base_url('administrator/article/edit-category/'.$row->id_category)?>">
+                                                    <i class="ti-pencil"></i></a>
+                                                    <a href="<?php echo base_url('administrator/article/delete-category/'.$row->id_category)?>">
+                                                    <i class="ti-trash"></i></a>
+                                                   </td>
+                                               </tr>
+                                                <?php
                                             }
-                                        }
-                                        ?>
+                                       }
+                                       ?>
                                        
                                     </tbody>
                                 </table>
@@ -46,10 +51,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                
-
 
                 </div>
             </div>

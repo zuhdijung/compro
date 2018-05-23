@@ -57,7 +57,7 @@ class Article extends CI_Controller {
         $perpage = 20;
         $this->load->library('pagination'); // load libraray pagination
         $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
-        $config['total_rows'] = $this->mpage->countPage();// fetch total record in databae using load
+        $config['total_rows'] = $this->marticle->countPage();// fetch total record in databae using load
         $config['per_page'] = $perpage; // Total data in one page
         $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
         $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
@@ -65,9 +65,9 @@ class Article extends CI_Controller {
         $config['use_page_numbers'] = TRUE;
         $this->pagination->initialize($config); // intialize var config
         $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
-        $data['results'] = $this->mpage->fetchPage($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
+        $data['results'] = $this->marticle->fetchPage($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
         $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
-        $data['total_rows'] = $this->mpage->countPage(); // Make a variable (array) link so the view can call the variable
+        $data['total_rows'] = $this->marticle->countPage(); // Make a variable (array) link so the view can call the variable
        $this->load->view('admin/dashboard', $data);
         }
         else{
@@ -94,7 +94,7 @@ class Article extends CI_Controller {
         $perpage = 20;
         $this->load->library('pagination'); // load libraray pagination
         $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
-        $config['total_rows'] = $this->mcategory->countCategory();// fetch total record in databae using load
+        $config['total_rows'] = $this->marticle->countCategory();// fetch total record in databae using load
         $config['per_page'] = $perpage; // Total data in one page
         $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
         $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
@@ -102,9 +102,9 @@ class Article extends CI_Controller {
         $config['use_page_numbers'] = TRUE;
         $this->pagination->initialize($config); // intialize var config
         $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
-        $data['results'] = $this->mcategory->fetchCategory($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
+        $data['results'] = $this->marticle->fetchCategory($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
         $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
-        $data['total_rows'] = $this->mcategory->countCategory(); // Make a variable (array) link so the view can call the variable
+        $data['total_rows'] = $this->marticle->countCategory(); // Make a variable (array) link so the view can call the variable
        $this->load->view('admin/dashboard', $data);
         }
         else{
