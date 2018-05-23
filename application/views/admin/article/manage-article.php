@@ -42,8 +42,7 @@
                                          if($rows->image_article!=''){
                                               ?>
                                                 <img class = 'img-responsive' src="<?php echo base_url($row->image_article)?>"></td>
-
-                                                ?>
+                                            }
                                             <td><?php
                                             echo $row->date_article;
                                             ?></td>
