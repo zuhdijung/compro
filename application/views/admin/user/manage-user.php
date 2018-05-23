@@ -35,16 +35,15 @@
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
                                                  </td>
+                                        </tr>
+                                        <?php
 
-                                                
                                             }
                                         }
                                         
 
                                         ?>
                                        
-
-                                        </tr>
                                         
                                     </tbody>
                                 </table>
