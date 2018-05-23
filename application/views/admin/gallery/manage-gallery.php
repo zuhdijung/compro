@@ -23,9 +23,28 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>abemazing</td>
-                                            <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
+                                        <?php
+                                          if ($results != FALSE) {
+                                            foreach ($results as $row ) {
+                                                ?>
+                                                 <tr>
+                                            <td> <?php
+                                            echo $row -> name_gallery;
+
+                                            ?></td>
+                                            <td> <?php 
+                                                if ($results != FALSE) {
+                                                    foreach ($results as $krow ) {
+                                                        ?>
+                                                        
+                                                            <td>
+                                                                <?php
+                                                                echo $row -> image_gallery;
+                                                           ?> </td>
+                                                    }
+                                                }
+
+                                            <img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>">?></td>
                                             <td><a href="<?php echo base_url('administrator/gallery/edit-gallery')?>">
                                                 <i class="ti-pencil"></i></a>
                                                 <i class="ti-trash"></i>
@@ -41,6 +60,10 @@
                                                  </td>
                                             
                                         </tr>
+
+
+                                        ?>
+                                       
                                        
                                     </tbody>
                                 </table>

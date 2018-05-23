@@ -28,12 +28,31 @@
                                             foreach ($results as $row ) {
                                                 ?>
                                                  <tr>
-                                            <td>abemazing</td>
-                                            <td>rpmhslg@gmail.com</td>
-                                            <td>Admin</td>
-                                            <td> <a href="<?php echo base_url('administrator/user/edit-user')?>">
+                                            <td> <?php
+                                            echo $row -> username;
+
+
+                                            ?></td>
+                                            <td><?php
+                                            echo $row -> email;
+
+
+                                            ?></td>
+                                            <td><?php
+                                            if ($row -> permission == 1) {
+                                                echo 'admin';
+                                            }
+                                            elseif ($row -> permission == 0) {
+                                                echo "writer";
+                                            }
+                                            
+
+
+                                            ?></td>
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user/'.$row -> id_user)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <i class="ti-trash"></i>
+                                                <a href="<?php echo base_url('administrator/user/delete-user/'.$row -> id_user)?>">
+                                                <i class="ti-trash"></i></a>
                                                  </td>
                                         </tr>
                                         <?php

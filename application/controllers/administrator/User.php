@@ -13,7 +13,7 @@ class User extends CI_Controller {
 
 	public function manage_user(){
 		$data['path_content'] = 'admin/user/manage-user';
-		$this->load->view('admin/dashboard', $data);
+		
 		$this->form_validation->set_rules('search','Search','required');
 
 		if(!$this->form_validation->run()){
