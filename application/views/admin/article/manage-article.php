@@ -26,22 +26,44 @@
                                        
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Berita Hari Ini</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                                            <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td>20 May 2018</td>
-                                            <td>abemazing</td>
-                                            <td><a href="<?php echo base_url('administrator/article/edit-article')?>">
+                                        <?php
+                                        if ($results != FALSE) {
+                                            foreach ($results as $row ) {
+                                                ?>
+                                                 <tr>
+                                            <td> <?php
+                                            echo $row->title;
+                                            ?></td>
+                                            <td><?php
+                                            echo $row->article;
+                                            ?></td>
+                                            <td>
+                                                <?php
+                                         if($rows->image_article!=''){
+                                              ?>
+                                                <img class = 'img-responsive' src="<?php echo base_url($row->image_article)?>"></td>
+
+                                                ?>
+                                            <td><?php
+                                            echo $row->date_article;
+                                            ?></td>
+                                            <td><?php
+                                            echo $row->id_user;
+                                            ?></td>
+                                            <td><a href="<?php echo base_url('administrator/article/edit-article/'.$row->id_article)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <i class="ti-trash"></i>
+                                                <a href="<?php echo base_url('administrator/article/delete-article/'.$row->id_article)?>">
+                                                <i class="ti-trash"></i></a>
                                                  </td>
                                         </tr>
+                                         <?php
+
+                                            }
+
+                                        }
+                                        
+
+                                        ?>
                                        
                                     </tbody>
                                 </table>

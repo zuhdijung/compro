@@ -6,16 +6,21 @@ class Mpage extends CI_Model {
 	function __construct(){
 		parent::__construct();
 	}
-	function validLogin($username,$password){
-		$enc = ')(*belajarkuy!@#';
-		$encrypted = md5($enc.$password.$enc);
+	function countPage(){
+		return $this->db->count_all_results('page');
+	}
 
-		$this->db->where('username',$username);
-		$this->db->where('password',$encrypted);
-		$result = $this->db->get('user');
-		if($result->num_rows()>0){
-			return $result->row_array();
-		}
-		else return false;
+	function fetchPage($limit,$start,$pagenumber) {
+	    if($pagenumber!="")
+	      $this->db->limit($limit,($pagenumber*$limit)-$limit);
+	    else
+	      $this->db->limit($limit,$start);
+	    $this->db->order_by('id_page','DESC');
+	    
+	    $query = $this->db->get('page');
+	    if($query->num_rows()>0){
+	      return $query->result();
+	    }
+	    else return FALSE;
 	}
 }

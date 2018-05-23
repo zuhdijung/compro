@@ -1,23 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mgallery extends CI_Model {
+class Marticle extends CI_Model {
 	// constrcutor
 	function __construct(){
 		parent::__construct();
 	}
-	function countGallery(){
-		return $this->db->count_all_results('gallery');
+	function countArticle(){
+		return $this->db->count_all_results('article');
 	}
 
-	function fetchGallery($limit,$start,$pagenumber) {
+	function fetchArticle($limit,$start,$pagenumber) {
 	    if($pagenumber!="")
 	      $this->db->limit($limit,($pagenumber*$limit)-$limit);
 	    else
 	      $this->db->limit($limit,$start);
-	    $this->db->order_by('id_gallery','DESC');
+	    $this->db->order_by('id_article','DESC');
 	    
-	    $query = $this->db->get('gallery');
+	    $query = $this->db->get('article');
 	    if($query->num_rows()>0){
 	      return $query->result();
 	    }

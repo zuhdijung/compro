@@ -29,7 +29,7 @@
                                                 ?>
                                                  <tr>
                                             <td> <?php
-                                            echo $row -> name_gallery;
+                                            echo $row->name_gallery;
 
                                             ?></td>
                                             <td> <?php 
@@ -39,7 +39,7 @@
                                                         
                                                             <td>
                                                                 <?php
-                                                                echo $row -> image_gallery;
+                                                                echo $row->image_gallery;
                                                            ?> </td>
                                                     }
                                                 }

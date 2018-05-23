@@ -29,29 +29,27 @@
                                                 ?>
                                                  <tr>
                                             <td> <?php
-                                            echo $row -> username;
+                                            echo $row->username;
 
 
                                             ?></td>
                                             <td><?php
-                                            echo $row -> email;
+                                            echo $row->email;
 
 
                                             ?></td>
                                             <td><?php
-                                            if ($row -> permission == 1) {
+                                            if ($row->permission == 1) {
                                                 echo 'admin';
                                             }
-                                            elseif ($row -> permission == 0) {
+                                            elseif ($row->permission == 0) {
                                                 echo "writer";
                                             }
-                                            
-
 
                                             ?></td>
-                                            <td> <a href="<?php echo base_url('administrator/user/edit-user/'.$row -> id_user)?>">
+                                            <td> <a href="<?php echo base_url('administrator/user/edit-user/'.$row->id_user)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/user/delete-user/'.$row -> id_user)?>">
+                                                <a href="<?php echo base_url('administrator/user/delete-user/'.$row->id_user)?>">
                                                 <i class="ti-trash"></i></a>
                                                  </td>
                                         </tr>

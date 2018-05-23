@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Gallery extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('mpage');
+		$this->load->model('mgallery');
 		if($this->session->userdata('login_user') == FALSE){
 			redirect(base_url('administrator/dashboard/login/'));
 		}
