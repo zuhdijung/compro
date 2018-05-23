@@ -24,57 +24,41 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                          if ($results != FALSE) {
+                                        if ($results != FALSE) {
                                             foreach ($results as $row ) {
-                                                ?>
-                                                 <tr>
-                                            <td> <?php
-                                            echo $row->name_gallery;
-
-                                            ?></td>
-                                            <td> <?php 
-                                                if ($results != FALSE) {
-                                                    foreach ($results as $krow ) {
-                                                        ?>
-                                                        
-                                                            <td>
-                                                                <?php
-                                                                echo $row->image_gallery;
-                                                           ?> </td>
-                                                    }
-                                                }
-
-                                            <img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>">?></td>
-                                            <td><a href="<?php echo base_url('administrator/gallery/edit-gallery')?>">
+                                              ?>
+                                              <tr>
+                                                  <td>
+                                                      <?php
+                                                      echo $row->name_gallery;
+                                                      ?>
+                                                  </td>
+                                                  <td>
+                                                      <?php
+                                                      if ($rows->image_gallery !='') {
+                                                          ?>
+                                                          <img class = 'img-responsive' src="<?php echo base_url($row->image_gallery)?>"></td>
+                                                          <?php
+                                                      }
+                                                      ?>
+                                                      <td><a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$row->id_gallery)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <i class="ti-trash"></i>
-                                                 </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>minerva</td>
-                                          <td><img class = 'img-responsive' src="<?php echo base_url('asset/asset-admin/img/bg-header.jpg')?>"></td>
-                                            <td><a href="<?php echo base_url('administrator/gallery/edit-gallery')?>">
-                                                <i class="ti-pencil"></i></a>
-                                                <i class="ti-trash"></i>
-                                                 </td>
-                                            
-                                        </tr>
+                                                <a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$row->id_gallery)?>">
+                                                <i class="ti-trash"></i></a>
+                                                 </td> 
 
-
+                                                  </td>
+                                              </tr>
+                                              <?php
+                                            }
+                                        }
                                         ?>
-                                       
-                                       
                                     </tbody>
                                 </table>
 
                             </div>
                         </div>
                     </div>
-
-
-                
-
 
                 </div>
             </div>
