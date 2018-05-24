@@ -43,10 +43,26 @@ class User extends CI_Controller {
 
 	 public function add_user(){
         $data['path_content'] = 'admin/user/add-user';
-        if($this->session->userdata('login_user') == FALSE){
-            redirect(base_url('administrator/dashboard/login/'));
-        }
-        $this->load->view('admin/dashboard', $data);
+        $this->form_validation->set_rules('username','Username','required|is_unique[user.username]');
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('confirm','Confirm Password','required|matches[password]');
+		$this->form_validation->set_rules('email','Email','required|valid_email|is_unique[user.email]');
+		$this->form_validation->set_rules('permission','Permission','required');
+        if(!$this->form_validation->run()){
+			$this->load->view('admin/dashboard',$data);
+		}
+		else{
+			// save data
+			$data = $_POST;
+			$array = array(
+					'username' => $data['username'],
+					'password' => md5($data['password']),
+					'email' => $data['email'],
+					'permission' => $data['permission'],
+				);
+			$this->mod->saveData($array,'user');
+			
+		}
 
     }
     public function edit_user(){

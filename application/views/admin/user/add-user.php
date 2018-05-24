@@ -15,12 +15,13 @@
                             </div>
                             <div class="content container-fluid">
                                  <?php echo form_open('')?>
+                                <?php echo validation_errors();?>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" >
+                                                <input type="text" class="form-control border-input" placeholder="Username" name="Username">
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +45,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="text" class="form-control border-input" placeholder="Email" >
+                                                <input type="text" class="form-control border-input" placeholder="Email" name="Email" >
                                             </div>
                                         </div>
                                     </div>
