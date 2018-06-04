@@ -115,12 +115,49 @@ class Article extends CI_Controller {
     }
     public function add_category(){
         $data['path_content'] = 'admin/article/add-category';
-        $this->load->view('admin/dashboard', $data);
+         $this->form_validation->set_rules('category','Category Name','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // save data
+            $data = $_POST;
+            $array = array(
+                    'category' => $data['category']
+                );
+            $this->mod->saveData($array,'category');
+
+            redirect(base_url('administrator/article/manage-category'));
+        }
 
     }
      public function edit_category(){
         $data['path_content'] = 'admin/article/edit-category';
+       $id =$this->uri->segment(4);
+        $data['result'] = $this->mod->getDataWhere('category','id_category',$id);
+        if($data['result'] == false)
+            redirect(base_url('administrator/article/manage-category'));
+
+        $this->form_validation->set_rules('category','Category Name','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // edit data
+            $data = $_POST;
+            $array = array(
+                    'category' => $data['category']
+                );
+            $this->mod->editData($array,'category','id_category',$id);
+            redirect(base_url('administrator/article/manage-category'));
+        }
         $this->load->view('admin/dashboard', $data);
+
+    }
+    public function delete_category(){
+        $id = $this->uri->segment(4);
+        $this->mod->deleteData('category','id_category',$id);
+        redirect(base_url($this->uri->segment(1).'/article/manage-category'));
     }
 
 

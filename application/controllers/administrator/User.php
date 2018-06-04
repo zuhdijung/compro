@@ -100,4 +100,9 @@ class User extends CI_Controller {
     	$this->load->view('admin/dashboard', $data);
 
     }
+    public function delete_user(){
+    	$id = $this->uri->segment(4);
+		$this->mod->deleteData('user','id_user',$id);
+		redirect(base_url($this->uri->segment(1).'/user/manage-user'));
+    }
 }

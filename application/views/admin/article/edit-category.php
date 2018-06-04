@@ -15,12 +15,13 @@
                             </div>
                             <div class="content container-fluid">
                                  <?php echo form_open('')?>
+                                 <?php echo validation_errors();?>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Category Name</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" >
+                                                <input type="text" class="form-control border-input" placeholder="Category Name" name='category'>
                                             </div>
                                         </div>
                                     </div>
