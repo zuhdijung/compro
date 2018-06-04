@@ -28,31 +28,31 @@
                                     <tbody>
                                         <?php
                                         if ($results != FALSE) {
-                                            foreach ($results as $row ) {
+                                            foreach ($results as $rows ) {
                                                 ?>
                                                  <tr>
                                             <td> <?php
-                                            echo $row->title;
+                                            echo $rows->title;
                                             ?></td>
                                             <td><?php
-                                            echo $row->article;
+                                            echo $rows->article;
                                             ?></td>
                                             <td>
                                                 <?php
                                          if($rows->image_article!=''){
                                               ?>
-                                                <img class = 'img-responsive' src="<?php echo base_url($row->image_article)?>"></td>
+                                                <img class = 'img-responsive' src="<?php echo base_url($rows->image_article)?>"></td>
                                             <?php
                                         }?>
                                             <td><?php
-                                            echo $row->date_article;
+                                            echo $rows->date_article;
                                             ?></td>
                                             <td><?php
-                                            echo $row->id_user;
+                                            echo $rows->username;
                                             ?></td>
-                                            <td><a href="<?php echo base_url('administrator/article/edit-article/'.$row->id_article)?>">
+                                            <td><a href="<?php echo base_url('administrator/article/edit-article/'.$rows->id_article)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/article/delete-article/'.$row->id_article)?>">
+                                                <a href="<?php echo base_url('administrator/article/delete-article/'.$rows->id_article)?>">
                                                 <i class="ti-trash"></i></a>
                                                  </td>
                                         </tr>

@@ -17,6 +17,7 @@ class Marticle extends CI_Model {
 	      $this->db->limit($limit,$start);
 	    $this->db->order_by('id_article','DESC');
 	    
+	    $this->db->join('user','article.id_user = user.id_user');
 	    $query = $this->db->get('article');
 	    if($query->num_rows()>0){
 	      return $query->result();

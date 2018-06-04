@@ -64,11 +64,14 @@ class Article extends CI_Controller {
             $data = $_POST;
             $array = array(
                     'title' => $data['title'],
-                    'article' => $data['article']
+                    'article' => $data['article'],
+                    'id_user' => $this->session->userdata('id_user'),
+                    'image_article' => 'asset/asset-admin/img/'.$images['file_name'],
+                    'date_article' => date('Y-m-d H-i-s')
                 );
             $this->mod->saveData($array,'article');
 
-            redirect(base_url('administrator/article/manage-article'));
+            redirect(base_url('administrator/article/manage'));
         }
 
     }

@@ -14,7 +14,7 @@
                                 
                             </div>
                              <div class="content container-fluid">
-                                 <?php echo form_open_multipart();?>
+                                 <?php echo form_open_multipart('');?>
                                  <?php echo validation_errors();
                                  ?>
                                     <div class="row">
