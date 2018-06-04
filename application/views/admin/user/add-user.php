@@ -21,7 +21,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" name="Username">
+                                                <input type="text" class="form-control border-input" placeholder="Username" name="username">
                                             </div>
                                         </div>
                                     </div>
@@ -37,7 +37,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Confirm Password</label>
-                                                <input type="Password" class="form-control border-input" placeholder="Confirm Your Password" value="" name="password">
+                                                <input type="Password" class="form-control border-input" placeholder="Confirm Your Password" value="" name="confirm">
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="text" class="form-control border-input" placeholder="Email" name="Email" >
+                                                <input type="text" class="form-control border-input" placeholder="Email" name="email" >
                                             </div>
                                         </div>
                                     </div>

@@ -20,7 +20,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" >
+                                                <input type="text" class="form-control border-input" placeholder="Username" name ='' >
                                             </div>
                                         </div>
                                     </div>
