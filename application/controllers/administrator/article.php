@@ -41,9 +41,38 @@ class Article extends CI_Controller {
 
     public function add_article(){
         $data['path_content'] = 'admin/article/add-article';
-        $this->load->view('admin/dashboard', $data);
+        $this->form_validation->set_rules('title','Title','required');
+        $this->form_validation->set_rules('article','Article','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // upload poto
+            $config['upload_path'] = './asset/asset-admin/img';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = '2000';
+            $config['file_name'] = 'image-'.$this->mod->urlFriendly($this->input->post('title')).date('Y-m-d_H-i-s');
+            $this->load->library('upload',$config);
+
+            if(!$this->upload->do_upload()){
+                $data['error'] = $this->upload->display_errors();
+                $this->load->view('admin/dashboard',$data);
+            }
+            else{
+                $images = $this->upload->data();
+            // save data
+            $data = $_POST;
+            $array = array(
+                    'title' => $data['title'],
+                    'article' => $data['article']
+                );
+            $this->mod->saveData($array,'article');
+
+            redirect(base_url('administrator/article/manage-article'));
+        }
 
     }
+}
     public function edit_article(){
         $data['path_content'] = 'admin/article/edit-article';
         $this->load->view('admin/dashboard', $data);
