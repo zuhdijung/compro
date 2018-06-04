@@ -14,9 +14,9 @@
                                 
                             </div>
                              <div class="content container-fluid">
-                                 <?php echo form_open('')?>
+                                 <?php echo form_open_multipart();?>
                                  <?php echo validation_errors();
-                                 echo $error;?>
+                                 ?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
