@@ -43,6 +43,7 @@ class Article extends CI_Controller {
         $data['path_content'] = 'admin/article/add-article';
         $this->form_validation->set_rules('title','Title','required');
         $this->form_validation->set_rules('article','Article','required');
+        $data['error'] = false;
         if(!$this->form_validation->run()){
             $this->load->view('admin/dashboard',$data);
         }
