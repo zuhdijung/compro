@@ -79,7 +79,55 @@ class Article extends CI_Controller {
 }
     public function edit_article(){
         $data['path_content'] = 'admin/article/edit-article';
-        $this->load->view('admin/dashboard', $data);
+        $id =$this->uri->segment(4);
+        $data['result'] = $this->mod->getDataWhere('article','id_article',$id);
+        if($data['result'] == false)
+            redirect(base_url('administrator/article/manage-article'));
+
+         $this->form_validation->set_rules('title','Title','required');
+         $this->form_validation->set_rules('article','Article','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // upload image
+            $config['upload_path'] = './asset/asset-admin/img';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = '2000';
+            $config['file_name'] = 'image-'.$this->mod->urlFriendly($this->input->post('title')).date('Y-m-d_H-i-s');
+            $this->load->library('upload',$config);
+
+            if(!$this->upload->do_upload()){
+                // save data
+                $data = $_POST;
+                $array = array(
+                    'title' => $data['title'],
+                    'article' => $data['article'],
+                    'id_user' => $this->session->userdata('id_user'),
+                    'image_article' => 'asset/asset-admin/img/'.$images['file_name'],
+                    'date_article' => date('Y-m-d H-i-s')
+                );
+                $this->mod->editData($array,'article','id_article',$id);
+                redirect(base_url($this->uri->segment(1).'/article/manage'));
+            } 
+            else{
+                $images = $this->upload->data();
+                // save data
+                $data = $_POST;
+                 $array = array(
+                    'title' => $data['title'],
+                    'article' => $data['article'],
+                    'id_user' => $this->session->userdata('id_user'),
+                    'image_article' => 'asset/asset-admin/img/'.$images['file_name'],
+                    'date_article' => date('Y-m-d H-i-s')
+                );
+                 $array['image_article'] = 'asset/asset-admin/img/'.$images['file_name'];
+                 $this->mod->editData($array,'article','id_article',$id);
+                redirect(base_url($this->uri->segment(1).'/article/manage'));
+            }
+        }
+
+
     }
     public function manage_page(){
         $data['path_content'] = 'admin/article/manage-page';

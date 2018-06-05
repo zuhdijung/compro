@@ -20,7 +20,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control border-input" placeholder="Home Address" >
+                                                <input type="text" class="form-control border-input" placeholder="Title" name="title " value="<?php echo $result['title']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -28,7 +28,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Article</label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"></textarea>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" name="article"><?php echo $result['article']?></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -36,7 +36,14 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Image Article</label>
-                                                <input type="file" name="userfile" class="form-control" placeholder="Here  you can  edit image"> 
+                                                <?php
+                                                if($result['image_article']!=''){
+                                                ?>
+                                                <img src="<?php echo base_url($result['image_article']) ?>" style="height:150px;">
+                                                <?php
+                                                }
+                                                ?>
+                                                <input type="file" class="form-control" name="userfile">
                                             </div>
                                         </div>
                                     </div>
