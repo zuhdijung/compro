@@ -130,6 +130,12 @@ class Article extends CI_Controller {
 
 
     }
+
+    public function delete_article(){
+         $id = $this->uri->segment(4);
+        $this->mod->deleteData('article','id_article',$id);
+        redirect(base_url($this->uri->segment(1).'/article/manage'));
+    }
     public function manage_page(){
         $data['path_content'] = 'admin/article/manage-page';
          $this->form_validation->set_rules('search','Search','required');
@@ -160,7 +166,28 @@ class Article extends CI_Controller {
     }
      public function add_page(){
         $data['path_content'] = 'admin/article/add-page';
-        $this->load->view('admin/dashboard', $data);
+        $data['category'] = $this->mod->fetchAllData('category');
+        $this->form_validation->set_rules('title_page','Title Page','required');
+        $this->form_validation->set_rules('id_category','Category Name','required');
+        $this->form_validation->set_rules('page','Page','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // save data
+            $data = $_POST;
+            $array = array(
+                    
+                    'title_page' => ['title_page'],
+                    'page' => $data['page'],
+                    'id_user' => $this->session->userdata('id_user'),
+
+                );
+            $this->mod->saveData($array,'page');
+
+            redirect(base_url('administrator/article/manage-page'));
+        }
+
 
     }
     public function edit_page(){

@@ -55,7 +55,7 @@
                                             <div class="form-group">
                                                 <label>Permission</label>
                                                 <?php 
-                                                    $options = $permission = array(
+                                                    $options = array(
                                                         0 => 'writer', 
                                                         1 => 'admin'
                                                     );
