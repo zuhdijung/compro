@@ -87,6 +87,7 @@ class Article extends CI_Controller {
          $this->form_validation->set_rules('title','Title','required');
          $this->form_validation->set_rules('article','Article','required');
         if(!$this->form_validation->run()){
+            $data['error'] = false;
             $this->load->view('admin/dashboard',$data);
         }
         else{
@@ -104,13 +105,14 @@ class Article extends CI_Controller {
                     'title' => $data['title'],
                     'article' => $data['article'],
                     'id_user' => $this->session->userdata('id_user'),
-                    'image_article' => 'asset/asset-admin/img/'.$images['file_name'],
-                    'date_article' => date('Y-m-d H-i-s')
+                    'date_article' => date('Y-m-d H:i:s')
                 );
                 $this->mod->editData($array,'article','id_article',$id);
                 redirect(base_url($this->uri->segment(1).'/article/manage'));
             } 
             else{
+                $this->load->helper('file');
+                unlink($data['result']['image_article']);
                 $images = $this->upload->data();
                 // save data
                 $data = $_POST;
@@ -119,10 +121,9 @@ class Article extends CI_Controller {
                     'article' => $data['article'],
                     'id_user' => $this->session->userdata('id_user'),
                     'image_article' => 'asset/asset-admin/img/'.$images['file_name'],
-                    'date_article' => date('Y-m-d H-i-s')
+                    'date_article' => date('Y-m-d H:i:s')
                 );
-                 $array['image_article'] = 'asset/asset-admin/img/'.$images['file_name'];
-                 $this->mod->editData($array,'article','id_article',$id);
+                $this->mod->editData($array,'article','id_article',$id);
                 redirect(base_url($this->uri->segment(1).'/article/manage'));
             }
         }

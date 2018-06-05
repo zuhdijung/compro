@@ -14,13 +14,16 @@
                                 
                             </div>
                              <div class="content container-fluid">
-                                 <?php echo form_open('')?>
+                                 <?php echo form_open_multipart('');
+                                 echo $error;
+                                 echo validation_errors();
+                                 ?>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control border-input" placeholder="Title" name="title " value="<?php echo $result['title']?>">
+                                                <input type="text" class="form-control border-input" placeholder="Title" name="title" value="<?php echo $result['title']?>">
                                             </div>
                                         </div>
                                     </div>
