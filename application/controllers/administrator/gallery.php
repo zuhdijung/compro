@@ -109,7 +109,7 @@ class Gallery extends CI_Controller {
                 $data = $_POST;
                  $array = array(
                     'name_gallery' => $data['name_gallery'],
-                    'image_article' => 'asset/asset-admin/img/'.$images['file_name']
+                    'image_gallery' => 'asset/asset-admin/img/'.$images['file_name']
                 );
                 $this->mod->editData($array,'gallery','id_gallery',$id);
                 redirect(base_url($this->uri->segment(1).'/gallery/manage'));
