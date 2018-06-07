@@ -20,7 +20,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title Page</label>
-                                                <input type="text" class="form-control border-input" placeholder="Home Address" >
+                                                <input type="text" class="form-control border-input" placeholder="Title Page" value="<?php echo $result['title_page']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -28,7 +28,25 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Page</label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"></textarea>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"><?php echo $result['page']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Category Name</label>
+                                                <?php
+                                                 $options = array(
+                                                 0 => 'Category Name'
+                                                    );
+                                                 if($category!=FALSE){
+                                                foreach ($category as $rows) {
+                                                 $options[$rows->id_category] = $rows->category;
+                                                    }
+                                                        }
+                                                echo form_dropdown('id_category',$options,$result['id_category'],'class="form-control"');
+                                                    ?>
                                             </div>
                                         </div>
                                     </div>

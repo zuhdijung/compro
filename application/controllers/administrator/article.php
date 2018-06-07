@@ -178,9 +178,10 @@ class Article extends CI_Controller {
             $data = $_POST;
             $array = array(
                     
-                    'title_page' => ['title_page'],
+                    'title_page' => $data['title_page'],
                     'page' => $data['page'],
                     'id_user' => $this->session->userdata('id_user'),
+                    'id_category' => $data['id_category']
 
                 );
             $this->mod->saveData($array,'page');
@@ -192,7 +193,32 @@ class Article extends CI_Controller {
     }
     public function edit_page(){
         $data['path_content'] = 'admin/article/edit-page';
+        $data['category'] = $this->mod->fetchAllData('category');
+          $id =$this->uri->segment(4);
+        $data['result'] = $this->mod->getDataWhere('page','id_page',$id);
+        if($data['result'] == false)
+            redirect(base_url('administrator/article/manage-page'));
+
+        $this->form_validation->set_rules('title_page','Title Page','required');
+        $this->form_validation->set_rules('id_category','Category Name','required');
+        $this->form_validation->set_rules('page','Page','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // edit data
+            $data = $_POST;
+            $array = array(
+                    'title_page' => $data['title_page'],
+                    'page' => $data['page'],
+                    'id_user' => $this->session->userdata('id_user'),
+                    'id_category' => $data['id_category']
+                );
+            $this->mod->editData($array,'page','id_page',$id);
+            redirect(base_url('administrator/article/manage-page'));
+        }
         $this->load->view('admin/dashboard', $data);
+
     }
     public function manage_category(){
         $data['path_content'] = 'admin/article/manage-category';
