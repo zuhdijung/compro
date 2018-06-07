@@ -25,25 +25,25 @@
                                     <tbody>
                                         <?php
                                         if ($results != FALSE) {
-                                            foreach ($results as $row ) {
+                                            foreach ($results as $rows ) {
                                               ?>
                                               <tr>
                                                   <td>
                                                       <?php
-                                                      echo $row->name_gallery;
+                                                      echo $rows->name_gallery;
                                                       ?>
                                                   </td>
                                                   <td>
                                                       <?php
                                                       if ($rows->image_gallery !='') {
                                                           ?>
-                                                          <img class = 'img-responsive' src="<?php echo base_url($row->image_gallery)?>"></td>
+                                                          <img class = 'img-responsive' src="<?php echo base_url($rows->image_gallery)?>"></td>
                                                           <?php
                                                       }
                                                       ?>
-                                                      <td><a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$row->id_gallery)?>">
+                                                      <td><a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$rows->id_gallery)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$row->id_gallery)?>">
+                                                <a href="<?php echo base_url('administrator/gallery/delete-gallery/'.$rows->id_gallery)?>">
                                                 <i class="ti-trash"></i></a>
                                                  </td> 
 

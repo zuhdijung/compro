@@ -177,16 +177,18 @@ class Article extends CI_Controller {
             // save data
             $data = $_POST;
             $array = array(
+                    
                     'title_page' => $data['title_page'],
                     'page' => $data['page'],
                     'id_user' => $this->session->userdata('id_user'),
-                    'date_page' => date('Y-m-d H:i:s'),
                     'id_category' => $data['id_category']
+
                 );
             $this->mod->saveData($array,'page');
 
             redirect(base_url('administrator/article/manage-page'));
         }
+
 
     }
     public function edit_page(){
@@ -216,8 +218,14 @@ class Article extends CI_Controller {
             redirect(base_url('administrator/article/manage-page'));
         }
         $this->load->view('admin/dashboard', $data);
-
+         }
+            public function delete_page(){
+         $id = $this->uri->segment(4);
+        $this->mod->deleteData('page','id_page',$id);
+        redirect(base_url($this->uri->segment(1).'/article/manage-page'));
     }
+
+    
     public function manage_category(){
         $data['path_content'] = 'admin/article/manage-category';
          $this->form_validation->set_rules('search','Search','required');

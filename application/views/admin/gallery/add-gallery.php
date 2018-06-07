@@ -15,13 +15,15 @@
                                 
                             </div>
                             <div class="content container-fluid">
-                                 <?php echo form_open('')?>
+                                 <?php echo form_open_multipart('');?>
+                                 <?php echo validation_errors();
+                                 ?>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Name Gallery</label>
-                                                <input type="text" class="form-control border-input" placeholder="Here You can add name of gallery" >
+                                                <input type="text" class="form-control border-input" placeholder="Here You can add name of gallery" name="name_gallery" >
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +31,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Image Article</label>
+                                                <label>Image Gallery</label>
                                                 <input type="file" name="userfile" class="form-control" placeholder="Here can you add image"> 
                                             </div>
                                         </div>
