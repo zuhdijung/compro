@@ -115,8 +115,6 @@ class Gallery extends CI_Controller {
                 redirect(base_url($this->uri->segment(1).'/gallery/manage'));
             }
         }
-
-
     }
 
      public function delete_gallery(){
