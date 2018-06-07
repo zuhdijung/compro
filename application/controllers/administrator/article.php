@@ -177,18 +177,16 @@ class Article extends CI_Controller {
             // save data
             $data = $_POST;
             $array = array(
-                    
                     'title_page' => $data['title_page'],
                     'page' => $data['page'],
                     'id_user' => $this->session->userdata('id_user'),
+                    'date_page' => date('Y-m-d H:i:s'),
                     'id_category' => $data['id_category']
-
                 );
             $this->mod->saveData($array,'page');
 
             redirect(base_url('administrator/article/manage-page'));
         }
-
 
     }
     public function edit_page(){
