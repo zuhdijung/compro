@@ -45,6 +45,8 @@
                                                 <i class="ti-pencil"></i></a>
                                                 <a href="<?php echo base_url('administrator/gallery/delete-gallery/'.$rows->id_gallery)?>">
                                                 <i class="ti-trash"></i></a>
+                                                <a href="<?php echo base_url('administrator/gallery/view-gallery/'.$rows->id_gallery)?>">
+                                                <i class="ti-image"></i></a>
                                                  </td> 
 
                                                   </td>
