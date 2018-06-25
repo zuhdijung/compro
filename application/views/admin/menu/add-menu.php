@@ -20,7 +20,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Menu</label>
-                                                <input type="text" class="form-control border-input" placeholder="Category Name" name="menu" >
+                                                <input type="text" class="form-control border-input" placeholder="Menu Name" name="menu" >
                                             </div>
                                         </div>
                                     </div>
@@ -29,12 +29,19 @@
                                             <div class="form-group">
                                                 <label>Parent</label>
                                               <?php 
-                                                    $options = array(
-                                                        0 => '', 
-                                                        1 => '',
-                                                        2 => ''
-                                                    );
-                                                    echo form_dropdown('permission',$options,'','class="form-control border-input"');
+                                                    $options = array(0=>'Ini adalah Parent Menu');
+                                                    if($menu != FALSE){
+                                                        foreach ($menu as $rows) {
+                                                            $options[$rows->id_menu] = $rows->menu;
+                                                            $results = $this->mod->fetchDataWhere('menu','id_parent',$rows->id_menu);
+                                                            if($results != FALSE){
+                                                                foreach ($results as $rows2) {
+                                                                    $options[$rows2->id_menu] = '-- '.$rows2->menu;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    echo form_dropdown('id_parent',$options,'','class="form-control border-input"');
                                                 ?>
                                             </div>
                                         </div>
@@ -42,8 +49,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Short Order</label>
-                                                <input type="number" name="sort_order" class="form-control border-input" placeholder="Short Order">
+                                                <label>Sort Order</label>
+                                                <input type="number" name="sort_order" class="form-control border-input" placeholder="Short Order" min=1>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +64,7 @@
                                                         1 => 'submenu',
                                                         2 => 'subsubmenu'
                                                     );
-                                                    echo form_dropdown('permission',$options,'','class="form-control border-input"');
+                                                    echo form_dropdown('hierarchy',$options,'','class="form-control border-input"');
                                                 ?>
                                             </div>
                                         </div>

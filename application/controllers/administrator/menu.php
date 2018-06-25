@@ -42,8 +42,9 @@ class Menu extends CI_Controller {
     public function add_menu(){
         $data['path_content'] = 'admin/menu/add-menu';
          $this->form_validation->set_rules('menu','Menu','required');
-         $this->form_validation->set_rules('id_parent','Parent','required');
-         $this->form_validation->set_rules('sort_order','Short Order','required');
+         $this->form_validation->set_rules('id_parent','Parent','numeric');
+         $this->form_validation->set_rules('sort_order','Short Order','required|numeric');
+        $data['menu'] = $this->mod->fetchDataWhere('menu','id_parent',0);
         if(!$this->form_validation->run()){
             $this->load->view('admin/dashboard',$data);
         }
@@ -53,10 +54,10 @@ class Menu extends CI_Controller {
             $array = array(
                     'menu' => $data['menu'],
                     'id_parent' => $data['id_parent'],
-                    'sort_order' => $data['sort_order']
+                    'sort_order' => $data['sort_order'],
+                    'hierarchy' => $data['hierarchy']
                 );
             $this->mod->saveData($array,'menu');
-
             redirect(base_url('administrator/menu/manage-menu'));
         }
 

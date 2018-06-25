@@ -17,28 +17,32 @@
                                     <thead>
                                         <th>Menu</th>
                                         <th>Parent</th>
-                                        <th>Short Order</th>
-                                        <th>Action</th>
-
-
-                                       
+                                        <th>Sort Order</th>
+                                        <th>Action</th>  
                                     </thead>
                                     <tbody>
                                        <?php
                                        if ($results != FALSE) {
-                                           foreach ($results as $row) {
+                                           foreach ($results as $rows) {
                                                ?>
                                                <tr>
                                                    <td>
-                                                       <?php
-                                                       echo $row->category;
+                                                       <?php echo $rows->menu; ?>
+                                                   </td>
+                                                   <td>
+                                                       <?php 
+                                                          $result = $this->mod->fetchDataWhere('menu','id_menu',$rows->id_parent);
+                                                          if($result!=false)
+                                                            echo $result['menu'];
+                                                          else
+                                                            echo "Ini Parent Menu";
                                                        ?>
                                                    </td>
-                                                   
+                                                   <td><?php echo $rows->sort_order; ?></td>
                                                    <td>
-                                                       <a href="<?php echo base_url('administrator/menu/edit-menu/'.$row->id_menu)?>">
+                                                       <a href="<?php echo base_url('administrator/menu/edit-menu/'.$rows->id_menu)?>">
                                                     <i class="ti-pencil"></i></a>
-                                                    <a href="<?php echo base_url('administrator/menu/delete-menu/'.$row->id_menu)?>">
+                                                    <a href="<?php echo base_url('administrator/menu/delete-menu/'.$rows->id_menu)?>">
                                                     <i class="ti-trash"></i></a>
                                                    </td>
                                                </tr>
