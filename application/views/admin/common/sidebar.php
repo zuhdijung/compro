@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('administrator/menu/manage');?>">
+                    <a href="<?php echo base_url('administrator/menu/manage-menu');?>">
                         <i class="ti-menu"></i>
                         <p>Menu</p>
                     </a>
