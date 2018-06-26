@@ -9,7 +9,7 @@
                             <div class="header">
                                 <h4 class="title">Upload Gallery</h4>
                                 <div style="margin-top:25px">
-                                     <a href="<?php echo base_url('administrator/view_gallery/manage')?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i>  Upload gallery</button>
+                                     <a href="<?php echo base_url('administrator/gallery/view-gallery/'.$this->uri->segment(4))?>"><button type="submit" class="btn btn-info btn-fill btn-wd"><i class="ti-arrow-left"></i> Manage Gallery</button>
                                     </div></a>
                                        
                                 

@@ -23,4 +23,18 @@ class Mgallery extends CI_Model {
 	    }
 	    else return FALSE;
 	}
+	function fetchViewGallery($limit,$start,$pagenumber,$id) {
+	    if($pagenumber!="")
+	      $this->db->limit($limit,($pagenumber*$limit)-$limit);
+	    else
+	      $this->db->limit($limit,$start);
+	    $this->db->order_by('id_image_gallery','DESC');
+	    
+	    $this->db->where('id_gallery',$id);
+	    $query = $this->db->get('image_gallery');
+	    if($query->num_rows()>0){
+	      return $query->result();
+	    }
+	    else return FALSE;
+	}
 }
