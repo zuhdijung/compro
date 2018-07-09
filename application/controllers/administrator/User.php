@@ -12,6 +12,7 @@ class User extends CI_Controller {
 	}
 
 	public function manage_user(){
+		$data['title'] = 'Manage User | Administrator';
 		$data['path_content'] = 'admin/user/manage-user';
 		
 		$this->form_validation->set_rules('search','Search','required');
@@ -42,6 +43,7 @@ class User extends CI_Controller {
 	}
 
 	 public function add_user(){
+	 	$data['title'] = 'Add User | Administrator';
         $data['path_content'] = 'admin/user/add-user';
         $this->form_validation->set_rules('username','Username','required|is_unique[user.username]');
 		$this->form_validation->set_rules('password','Password','required');
@@ -64,10 +66,9 @@ class User extends CI_Controller {
 
 			redirect(base_url('administrator/user/manage-user'));
 		}
-
-
     }
     public function edit_user(){
+    	$data['title'] = 'Edit User | Administrator';
     	$data['path_content'] = 'admin/user/edit-user';
     	
 		$id =$this->uri->segment(4);

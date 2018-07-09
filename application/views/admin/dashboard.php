@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-     <title>Paper Dashboard by Creative Tim</title>
+     <title><?php echo $title;?></title>
     <?php $this->load->view('admin/common/header'); ?>
 
 </head>

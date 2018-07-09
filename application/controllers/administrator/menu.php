@@ -12,6 +12,7 @@ class Menu extends CI_Controller {
 
 
  public function manage_menu(){
+        $data['title'] = 'Manage Menu | Administrator';
         $data['path_content'] = 'admin/menu/manage-menu';
          $this->form_validation->set_rules('search','Search','required');
 
@@ -40,6 +41,7 @@ class Menu extends CI_Controller {
         }
     }
     public function add_menu(){
+        $data['title'] = 'Add Menu | Administrator';
         $data['path_content'] = 'admin/menu/add-menu';
          $this->form_validation->set_rules('menu','Menu','required');
          $this->form_validation->set_rules('id_parent','Parent','numeric');
@@ -63,6 +65,7 @@ class Menu extends CI_Controller {
 
     }
      public function edit_menu(){
+        $data['title'] = 'Edit Menu | Administrator';
         $data['path_content'] = 'admin/menu/edit-menu';
        $id =$this->uri->segment(4);
         $data['result'] = $this->mod->getDataWhere('menu','menu',$id);

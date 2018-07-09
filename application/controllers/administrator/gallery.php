@@ -11,6 +11,7 @@ class Gallery extends CI_Controller {
 	}
 
 	public function manage(){
+        $data['title'] = 'Manage Gallery | Administrator';
 		$data['path_content'] = 'admin/gallery/manage-gallery';
 		$this->form_validation->set_rules('search','Search','required');
 
@@ -39,6 +40,7 @@ class Gallery extends CI_Controller {
 		}
 	}
     public function view_gallery(){
+        $data['title'] = 'View Gallery | Administrator';
         $data['path_content'] = 'admin/gallery/view-gallery';
 
         $id = $this->uri->segment(4);
@@ -72,6 +74,7 @@ class Gallery extends CI_Controller {
         }
     }
 	 public function add_gallery(){
+        $data['title'] = 'Add Gallery | Administrator';
         $data['path_content'] = 'admin/gallery/add-gallery';
        $this->form_validation->set_rules('name_gallery','Name Gallery','required');
          $data['error'] = false;
@@ -105,6 +108,7 @@ class Gallery extends CI_Controller {
         }
     }
     public function upload_image(){
+        $data['title'] = 'Upload Image to Gallery | Administrator';
         $data['path_content'] = 'admin/gallery/upload-image';
        
         $id = $this->uri->segment(4);
@@ -145,6 +149,7 @@ class Gallery extends CI_Controller {
         }
     }
     public function edit_gallery(){
+        $data['title'] = 'Edit Gallery | Administrator';
     	$data['path_content'] = 'admin/gallery/edit-gallery';
         $id =$this->uri->segment(4);
         $data['result'] = $this->mod->getDataWhere('gallery','id_gallery',$id);

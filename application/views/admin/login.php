@@ -30,17 +30,25 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('asset/asset-admin/css/themify-icons.css');?>" rel="stylesheet">
+    <style type="text/css">
+        .login-form{
+            margin-top: 100px;
+        }
+    </style>
 	<title>Login</title>
 </head>
 <body>
-
+    <div class="login-form">
         <div class="content">
             <div class="container-fluid">
+                <div class="row">
+                    <h2 class="text-center">ADMINISTRATOR PAGE</h2>
+                </div>
                 <div class="row">
                     <div class=" col-md-6 col-md-offset-3">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Login Administrator</h4>
+                                <h4 class="title">Login to Administrator</h4>
                             </div>
                             <div class="content">
                                 <?php echo form_open('')?>
@@ -66,7 +74,7 @@
 
 											?>
                                     <div class="text-center">
-                                        <a href=""><button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
                                     </div>
                                     <div class="clearfix"></div>
                                <?php echo form_close('')?>
@@ -78,7 +86,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 <!--   Core JS Files   -->
     <script src="<?php echo base_url('asset/asset-admin/js/jquery-1.10.2.js');?>" type="text/javascript"></script>
     <script src="<?php echo base_url('asset/asset-admin/js/bootstrap.min.js');?>" type="text/javascript"></script>

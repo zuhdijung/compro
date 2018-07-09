@@ -9,8 +9,9 @@ class Article extends CI_Controller {
             redirect(base_url('administrator/dashboard/login/'));
         }
     }
-
+    // manage function
     public function manage(){
+        $data['title'] = 'Manage Article | Administrator';
         $data['path_content'] = 'admin/article/manage-article';
        $this->form_validation->set_rules('search','Search','required');
 
@@ -38,8 +39,68 @@ class Article extends CI_Controller {
             $this->load->view('admin/dashboard', $data);
         }
     }
+    public function manage_page(){
+        $data['title'] = 'Manage Page | Administrator';
+        $data['path_content'] = 'admin/article/manage-page';
+         $this->form_validation->set_rules('search','Search','required');
 
+        if(!$this->form_validation->run()){
+        // Ngeload data
+        $perpage = 20;
+        $this->load->library('pagination'); // load libraray pagination
+        $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
+        $config['total_rows'] = $this->marticle->countPage();// fetch total record in databae using load
+        $config['per_page'] = $perpage; // Total data in one page
+        $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
+        $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
+        $config['num_links'] = 3; // Rounding Choice Variable
+        $config['use_page_numbers'] = TRUE;
+        $this->pagination->initialize($config); // intialize var config
+        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
+        $data['results'] = $this->marticle->fetchPage($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
+        $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
+        $data['total_rows'] = $this->marticle->countPage(); // Make a variable (array) link so the view can call the variable
+       $this->load->view('admin/dashboard', $data);
+        }
+        else{
+            $data['results'] = $this->mcorporate->fetchCorporateSearch($_POST); // fetch data using limit and pagination
+            $data['links'] = false;
+            $this->load->view('admin/dashboard', $data);
+        }
+    }
+    public function manage_category(){
+        $data['title'] = 'Manage Category | Administrator';
+        $data['path_content'] = 'admin/article/manage-category';
+         $this->form_validation->set_rules('search','Search','required');
+
+        if(!$this->form_validation->run()){
+        // Ngeload data
+        $perpage = 20;
+        $this->load->library('pagination'); // load libraray pagination
+        $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
+        $config['total_rows'] = $this->marticle->countCategory();// fetch total record in databae using load
+        $config['per_page'] = $perpage; // Total data in one page
+        $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
+        $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
+        $config['num_links'] = 3; // Rounding Choice Variable
+        $config['use_page_numbers'] = TRUE;
+        $this->pagination->initialize($config); // intialize var config
+        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
+        $data['results'] = $this->marticle->fetchCategory($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
+        $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
+        $data['total_rows'] = $this->marticle->countCategory(); // Make a variable (array) link so the view can call the variable
+       $this->load->view('admin/dashboard', $data);
+        }
+        else{
+            $data['results'] = $this->mcorporate->fetchCorporateSearch($_POST); // fetch data using limit and pagination
+            $data['links'] = false;
+            $this->load->view('admin/dashboard', $data);
+        }
+    }
+
+    // add function 
     public function add_article(){
+        $data['title'] = 'Add Article | Administrator';
         $data['path_content'] = 'admin/article/add-article';
         $this->form_validation->set_rules('title','Title','required');
         $this->form_validation->set_rules('article','Article','required');
@@ -74,10 +135,56 @@ class Article extends CI_Controller {
 
             redirect(base_url('administrator/article/manage'));
         }
-
     }
 }
+    public function add_page(){
+        $data['title'] = 'Add Page | Administrator';
+        $data['path_content'] = 'admin/article/add-page';
+        $data['category'] = $this->mod->fetchAllData('category');
+        $this->form_validation->set_rules('title_page','Title Page','required');
+        $this->form_validation->set_rules('id_category','Category Name','required');
+        $this->form_validation->set_rules('page','Page','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // save data
+            $data = $_POST;
+            $array = array(
+                    
+                    'title_page' => $data['title_page'],
+                    'page' => $data['page'],
+                    'id_user' => $this->session->userdata('id_user'),
+                    'id_category' => $data['id_category']
+
+                );
+            $this->mod->saveData($array,'page');
+            redirect(base_url('administrator/article/manage-page'));
+        }
+    }
+    public function add_category(){
+        $data['title'] = 'Add Category | Administrator';
+        $data['path_content'] = 'admin/article/add-category';
+         $this->form_validation->set_rules('category','Category Name','required');
+        if(!$this->form_validation->run()){
+            $this->load->view('admin/dashboard',$data);
+        }
+        else{
+            // save data
+            $data = $_POST;
+            $array = array(
+                    'category' => $data['category']
+                );
+            $this->mod->saveData($array,'category');
+
+            redirect(base_url('administrator/article/manage-category'));
+        }
+
+    }
+    
+    // edit function
     public function edit_article(){
+        $data['title'] = 'Edit Article | Administrator';
         $data['path_content'] = 'admin/article/edit-article';
         $id =$this->uri->segment(4);
         $data['result'] = $this->mod->getDataWhere('article','id_article',$id);
@@ -127,71 +234,9 @@ class Article extends CI_Controller {
                 redirect(base_url($this->uri->segment(1).'/article/manage'));
             }
         }
-
-
-    }
-
-    public function delete_article(){
-         $id = $this->uri->segment(4);
-        $this->mod->deleteData('article','id_article',$id);
-        redirect(base_url($this->uri->segment(1).'/article/manage'));
-    }
-    public function manage_page(){
-        $data['path_content'] = 'admin/article/manage-page';
-         $this->form_validation->set_rules('search','Search','required');
-
-        if(!$this->form_validation->run()){
-        // Ngeload data
-        $perpage = 20;
-        $this->load->library('pagination'); // load libraray pagination
-        $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
-        $config['total_rows'] = $this->marticle->countPage();// fetch total record in databae using load
-        $config['per_page'] = $perpage; // Total data in one page
-        $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
-        $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
-        $config['num_links'] = 3; // Rounding Choice Variable
-        $config['use_page_numbers'] = TRUE;
-        $this->pagination->initialize($config); // intialize var config
-        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
-        $data['results'] = $this->marticle->fetchPage($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
-        $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
-        $data['total_rows'] = $this->marticle->countPage(); // Make a variable (array) link so the view can call the variable
-       $this->load->view('admin/dashboard', $data);
-        }
-        else{
-            $data['results'] = $this->mcorporate->fetchCorporateSearch($_POST); // fetch data using limit and pagination
-            $data['links'] = false;
-            $this->load->view('admin/dashboard', $data);
-        }
-    }
-     public function add_page(){
-        $data['path_content'] = 'admin/article/add-page';
-        $data['category'] = $this->mod->fetchAllData('category');
-        $this->form_validation->set_rules('title_page','Title Page','required');
-        $this->form_validation->set_rules('id_category','Category Name','required');
-        $this->form_validation->set_rules('page','Page','required');
-        if(!$this->form_validation->run()){
-            $this->load->view('admin/dashboard',$data);
-        }
-        else{
-            // save data
-            $data = $_POST;
-            $array = array(
-                    
-                    'title_page' => $data['title_page'],
-                    'page' => $data['page'],
-                    'id_user' => $this->session->userdata('id_user'),
-                    'id_category' => $data['id_category']
-
-                );
-            $this->mod->saveData($array,'page');
-
-            redirect(base_url('administrator/article/manage-page'));
-        }
-
-
     }
     public function edit_page(){
+        $data['title'] = 'Edit Page | Administrator';
         $data['path_content'] = 'admin/article/edit-page';
         $data['category'] = $this->mod->fetchAllData('category');
           $id =$this->uri->segment(4);
@@ -219,60 +264,8 @@ class Article extends CI_Controller {
         }
         $this->load->view('admin/dashboard', $data);
          }
-            public function delete_page(){
-         $id = $this->uri->segment(4);
-        $this->mod->deleteData('page','id_page',$id);
-        redirect(base_url($this->uri->segment(1).'/article/manage-page'));
-    }
-
-    
-    public function manage_category(){
-        $data['path_content'] = 'admin/article/manage-category';
-         $this->form_validation->set_rules('search','Search','required');
-
-        if(!$this->form_validation->run()){
-        // Ngeload data
-        $perpage = 20;
-        $this->load->library('pagination'); // load libraray pagination
-        $config['base_url'] = base_url($this->uri->segment(1).'/corporate/identity/'); // configurate link pagination
-        $config['total_rows'] = $this->marticle->countCategory();// fetch total record in databae using load
-        $config['per_page'] = $perpage; // Total data in one page
-        $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
-        $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
-        $config['num_links'] = 3; // Rounding Choice Variable
-        $config['use_page_numbers'] = TRUE;
-        $this->pagination->initialize($config); // intialize var config
-        $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
-        $data['results'] = $this->marticle->fetchCategory($config['per_page'],$page,$this->uri->segment(4)); // fetch data using limit and pagination
-        $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
-        $data['total_rows'] = $this->marticle->countCategory(); // Make a variable (array) link so the view can call the variable
-       $this->load->view('admin/dashboard', $data);
-        }
-        else{
-            $data['results'] = $this->mcorporate->fetchCorporateSearch($_POST); // fetch data using limit and pagination
-            $data['links'] = false;
-            $this->load->view('admin/dashboard', $data);
-        }
-    }
-    public function add_category(){
-        $data['path_content'] = 'admin/article/add-category';
-         $this->form_validation->set_rules('category','Category Name','required');
-        if(!$this->form_validation->run()){
-            $this->load->view('admin/dashboard',$data);
-        }
-        else{
-            // save data
-            $data = $_POST;
-            $array = array(
-                    'category' => $data['category']
-                );
-            $this->mod->saveData($array,'category');
-
-            redirect(base_url('administrator/article/manage-category'));
-        }
-
-    }
      public function edit_category(){
+        $data['title'] = 'Edit Category | Administrator';
         $data['path_content'] = 'admin/article/edit-category';
        $id =$this->uri->segment(4);
         $data['result'] = $this->mod->getDataWhere('category','id_category',$id);
@@ -294,6 +287,18 @@ class Article extends CI_Controller {
         }
         $this->load->view('admin/dashboard', $data);
 
+    }
+
+    // delete function
+    public function delete_article(){
+         $id = $this->uri->segment(4);
+        $this->mod->deleteData('article','id_article',$id);
+        redirect(base_url($this->uri->segment(1).'/article/manage'));
+    }
+    public function delete_page(){
+         $id = $this->uri->segment(4);
+        $this->mod->deleteData('page','id_page',$id);
+        redirect(base_url($this->uri->segment(1).'/article/manage-page'));
     }
     public function delete_category(){
         $id = $this->uri->segment(4);

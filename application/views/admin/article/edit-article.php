@@ -23,7 +23,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control border-input" placeholder="Title" name="title" value="<?php echo $results['title']?>">
+                                                <input type="text" class="form-control border-input" placeholder="Title" name="title" value="<?php echo $result['title']?>">
                                             </div>
                                         </div>
                                     </div>
