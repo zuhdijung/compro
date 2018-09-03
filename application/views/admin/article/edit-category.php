@@ -21,25 +21,10 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Category Name</label>
-                                                <input type="text" class="form-control border-input" placeholder="Category Name" name='category'>
+                                                <input type="text" class="form-control border-input" placeholder="Category Name" name='category' value="<?php echo $result['category']?>">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Choose Category</label>
-                                                <?php 
-                                                    $options = $choose = array(
-                                                        0 => 'writer', 
-                                                        1 => 'admin'
-                                                    );
-                                                    echo form_dropdown('choose',$options,'','class="form-control border-input"');
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Edit Category</button>
                                     </div>

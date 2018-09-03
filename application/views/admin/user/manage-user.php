@@ -49,7 +49,7 @@
                                             ?></td>
                                             <td> <a href="<?php echo base_url('administrator/user/edit-user/'.$row->id_user)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/user/delete-user/'.$row->id_user)?>">
+                                                <a href="<?php echo base_url('administrator/user/delete-user/'.$row->id_user)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
                                                 <i class="ti-trash"></i></a>
                                                  </td>
                                         </tr>

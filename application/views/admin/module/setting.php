@@ -29,9 +29,65 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    
-
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Logo Website</label>
+                                                <?php 
+                                                    if($result['logo_website'] != ''){
+                                                        ?>
+                                                        <br /><img src="<?php echo base_url($result['logo_website']);?>" style="width:200px;">
+                                                        <?php
+                                                    }
+                                                ?>
+                                                <input type="file" class="form-control border-input" placeholder="Tagline Website" name="userfile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Default Template</label>
+                                                <select class="form-control border-input" name="default_template">
+                                                    <option value="default">Default</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Admin Template</label>
+                                                <select class="form-control border-input" name="default_admin">
+                                                    <option value="admin">Admin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Description</label>
+                                                <textarea class="form-control border-input" name="meta_description"><?php echo $result['meta_description']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Keywords (Separate with Comma)</label>
+                                                <textarea class="form-control border-input" name="meta_keywords"><?php echo $result['meta_keywords']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Footer</label>
+                                                <textarea class="form-control border-input" name="footer"><?php echo $result['footer']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Save Setting</button>
                                     </div>

@@ -32,13 +32,13 @@
                                                       <?php
                                                       if ($rows->image_url !='') {
                                                           ?>
-                                                          <img class = 'img-responsive' src="<?php echo base_url($rows->image_url)?>">
+                                                          <img style="height:150px;" src="<?php echo base_url($rows->image_url)?>">
                                                           <?php
                                                       }
                                                       ?>
                                                   </td>
                                                   <td>
-                                                <a href="<?php echo base_url('administrator/gallery/delete-image/'.$rows->id_image_gallery)?>">
+                                                <a href="<?php echo base_url('administrator/gallery/delete-image/'.$rows->id_image_gallery)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
                                                 <i class="ti-trash"></i></a>
                                                   </td>
                                               </tr>

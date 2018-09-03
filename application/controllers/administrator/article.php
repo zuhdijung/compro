@@ -143,6 +143,7 @@ class Article extends CI_Controller {
         $data['category'] = $this->mod->fetchAllData('category');
         $this->form_validation->set_rules('title_page','Title Page','required');
         $this->form_validation->set_rules('id_category','Category Name','required');
+        $this->form_validation->set_rules('link_page','Link Page','required');
         $this->form_validation->set_rules('page','Page','required');
         if(!$this->form_validation->run()){
             $this->load->view('admin/dashboard',$data);
@@ -154,9 +155,12 @@ class Article extends CI_Controller {
                     
                     'title_page' => $data['title_page'],
                     'page' => $data['page'],
+                    'link_page' => $data['link_page'],
                     'id_user' => $this->session->userdata('id_user'),
-                    'id_category' => $data['id_category']
-
+                    'id_category' => $data['id_category'],
+                    'meta_description' => $data['meta_description'],
+                    'meta_keywords' => $data['meta_keywords'],
+                    'date_page' => date('Y-m-d H:i:s')
                 );
             $this->mod->saveData($array,'page');
             redirect(base_url('administrator/article/manage-page'));
@@ -246,6 +250,7 @@ class Article extends CI_Controller {
 
         $this->form_validation->set_rules('title_page','Title Page','required');
         $this->form_validation->set_rules('id_category','Category Name','required');
+        $this->form_validation->set_rules('link_page','Link Page','required');
         $this->form_validation->set_rules('page','Page','required');
         if(!$this->form_validation->run()){
             $this->load->view('admin/dashboard',$data);
@@ -256,8 +261,11 @@ class Article extends CI_Controller {
             $array = array(
                     'title_page' => $data['title_page'],
                     'page' => $data['page'],
+                    'link_page' => $data['link_page'],
                     'id_user' => $this->session->userdata('id_user'),
-                    'id_category' => $data['id_category']
+                    'id_category' => $data['id_category'],
+                    'meta_description' => $data['meta_description'],
+                    'meta_keywords' => $data['meta_keywords'],
                 );
             $this->mod->editData($array,'page','id_page',$id);
             redirect(base_url('administrator/article/manage-page'));

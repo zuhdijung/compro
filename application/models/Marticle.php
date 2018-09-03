@@ -58,4 +58,12 @@ class Marticle extends CI_Model {
 	    }
 	    else return FALSE;
 	}
+	function getPage($link_page){
+		$this->db->where('link_page',$link_page);
+		$query = $this->db->get('page');
+	    if($query->num_rows()>0){
+	      return $query->result_array();
+	    }
+	    else return FALSE;
+	}
 }

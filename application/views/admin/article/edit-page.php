@@ -30,8 +30,32 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Link Page</label>
+                                                <input type="text" class="form-control border-input" placeholder="Link Page" name="link_page" value="<?php echo $result['link_page']?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>Page</label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" name="page"><?php echo $result['page']?></textarea>
+                                                <textarea rows="5" class="form-control border-input textarea" placeholder="Here can be your description" name="page"><?php echo $result['page']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Description</label>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Meta Description" name="meta_description"><?php echo $result['meta_description']?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Keywords</label>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Meta Keywords (Separate by Comma)" name="meta_keywords"><?php echo $result['meta_keywords']?></textarea>
                                             </div>
                                         </div>
                                     </div>

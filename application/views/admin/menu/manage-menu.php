@@ -16,7 +16,8 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <th>Menu</th>
-                                        <th>Parent</th>
+                                        <th>Link</th>
+                                        <th title="External / Internal">Ex/In</th>
                                         <th>Sort Order</th>
                                         <th>Action</th>  
                                     </thead>
@@ -29,7 +30,16 @@
                                                    <td>
                                                        <?php echo $rows->menu; ?>
                                                    </td>
+                                                   <td><?php echo $rows->link_menu?></td>
                                                    <td>
+                                                     <?php
+                                                      if($rows->internal_link == 0)
+                                                        echo "In";
+                                                      else if($rows->internal_link == 1)
+                                                        echo "Ex";
+                                                     ?>
+                                                   </td>
+                                                   <!-- <td>
                                                        <?php 
                                                           $result = $this->mod->fetchDataWhere('menu','id_menu',$rows->id_parent);
                                                           if($result!=false)
@@ -37,12 +47,12 @@
                                                           else
                                                             echo "Ini Parent Menu";
                                                        ?>
-                                                   </td>
+                                                   </td> -->
                                                    <td><?php echo $rows->sort_order; ?></td>
                                                    <td>
                                                        <a href="<?php echo base_url('administrator/menu/edit-menu/'.$rows->id_menu)?>">
                                                     <i class="ti-pencil"></i></a>
-                                                    <a href="<?php echo base_url('administrator/menu/delete-menu/'.$rows->id_menu)?>">
+                                                    <a href="<?php echo base_url('administrator/menu/delete-menu/'.$rows->id_menu)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
                                                     <i class="ti-trash"></i></a>
                                                    </td>
                                                </tr>

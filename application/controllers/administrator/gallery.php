@@ -94,12 +94,12 @@ class Gallery extends CI_Controller {
                 $this->load->view('admin/dashboard',$data);
             }
             else{
-                $images = $this->upload->data();
+            $images = $this->upload->data();
             // save data
             $data = $_POST;
             $array = array(
                     'name_gallery' => $data['name_gallery'],
-                    'image_gallery' => 'asset/asset-admin/img/'.$images['file_name']
+                    'image_gallery' => 'asset/images/'.$images['file_name']
                 );
             $this->mod->saveData($array,'gallery');
 

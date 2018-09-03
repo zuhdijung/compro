@@ -4,24 +4,17 @@
                     <ul>
 
                         <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
+                            <a href="http://zqaqiqahqurban.com.com">
+                                <?php
+                                    $result = $this->mod->getDataWhere('setting','id_setting',1);
+                                    echo $result['title_website'];
+                                ?>
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, Developed By <i class="fa fa-heart heart"></i> by <a href="http://belajarkuy.com">Belajar Kuy</a>
                 </div>
             </div>
         </footer>

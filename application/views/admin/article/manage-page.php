@@ -19,9 +19,6 @@
                                         <th>Page</th>
                                         <th>Date Page</th>
                                         <th>Action</th>
-
-
-                                       
                                     </thead>
                                     <tbody>
                                         <?php 
@@ -36,18 +33,19 @@
                                                     </td>
                                                     <td>
                                                         <?php
-                                                        echo $row->page;
+                                                        echo substr(strip_tags($row->page),0,100);
                                                         ?>
                                                     </td>
                                                     <td>
                                                         <?php
-                                                        echo $row->date_page;
+                                                        echo date('d M Y H:i',strtotime($row->date_page));
                                                         ?>
                                                     </td>
-                                                    <td><a href="<?php echo base_url('administrator/article/edit-page/'.$row->id_page)?>">
-                                                <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/article/delete-page/'.$row->id_page)?>">
-                                                <i class="ti-trash"></i></a>
+                                                    <td>
+                                                        <a href="<?php echo base_url('administrator/article/edit-page/'.$row->id_page)?>">
+                                                        <i class="ti-pencil"></i></a>
+                                                        <a href="<?php echo base_url('administrator/article/delete-page/'.$row->id_page)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
+                                                        <i class="ti-trash"></i></a>
                                                  </td>
                                                 </tr>
                                                 <?php

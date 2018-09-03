@@ -14,13 +14,15 @@
                                 
                             </div>
                             <div class="content container-fluid">
-                                 <?php echo form_open('')?>
+                                 <?php echo form_open('');
+                                    echo validation_errors();
+                                 ?>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control border-input" placeholder="Username" name ='' >
+                                                <input type="text" class="form-control border-input" placeholder="Username" name ='username' value="<?php echo $result['username']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -36,7 +38,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Confirm Password</label>
-                                                <input type="Password" class="form-control border-input" placeholder="Confirm Your Password" value="" name="password">
+                                                <input type="Password" class="form-control border-input" placeholder="Confirm Your Password" value="" name="confirm">
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +46,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="text" class="form-control border-input" placeholder="Email" >
+                                                <input type="text" class="form-control border-input" placeholder="Email" name="email" value="<?php echo $result['email']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +60,7 @@
                                                         0 => 'writer', 
                                                         1 => 'admin'
                                                     );
-                                                    echo form_dropdown('permission',$options,'','class="form-control border-input"');
+                                                    echo form_dropdown('permission',$options,$result['permission'],'class="form-control border-input"');
                                                 ?>
                                             </div>
                                         </div>

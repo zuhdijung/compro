@@ -20,17 +20,40 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Menu</label>
-                                                <input type="text" class="form-control border-input" placeholder="Menu Name" name="menu" >
+                                                <input type="text" class="form-control border-input" placeholder="Menu Name" name="menu">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Internal Link</label>
+                                                <?php
+                                                    $options = array(
+                                                        0 => 'Internal Link',
+                                                        1 => 'External Link'
+                                                    );
+                                                    echo form_dropdown('internal_link',$options,set_value('internal_link'),'class="form-control border-input"');
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Link Menu</label>
+                                                <input type="text" class="form-control border-input" placeholder="Link Menu" name="link_menu" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>Parent</label>
                                               <?php 
                                                     $options = array(0=>'Ini adalah Parent Menu');
-                                                    if($menu != FALSE){
+                                                    /*if($menu != FALSE){
                                                         foreach ($menu as $rows) {
                                                             $options[$rows->id_menu] = $rows->menu;
                                                             $results = $this->mod->fetchDataWhere('menu','id_parent',$rows->id_menu);
@@ -40,7 +63,7 @@
                                                                 }
                                                             }
                                                         }
-                                                    }
+                                                    }*/
                                                     echo form_dropdown('id_parent',$options,'','class="form-control border-input"');
                                                 ?>
                                             </div>

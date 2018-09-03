@@ -37,13 +37,13 @@
                                                       <?php
                                                       if ($rows->image_gallery !='') {
                                                           ?>
-                                                          <img class = 'img-responsive' src="<?php echo base_url($rows->image_gallery)?>"></td>
+                                                          <img style="height:250px;" src="<?php echo base_url($rows->image_gallery)?>"></td>
                                                           <?php
                                                       }
                                                       ?>
                                                       <td><a href="<?php echo base_url('administrator/gallery/edit-gallery/'.$rows->id_gallery)?>">
                                                 <i class="ti-pencil"></i></a>
-                                                <a href="<?php echo base_url('administrator/gallery/delete-gallery/'.$rows->id_gallery)?>">
+                                                <a href="<?php echo base_url('administrator/gallery/delete-gallery/'.$rows->id_gallery)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
                                                 <i class="ti-trash"></i></a>
                                                 <a href="<?php echo base_url('administrator/gallery/view-gallery/'.$rows->id_gallery)?>">
                                                 <i class="ti-image"></i></a>

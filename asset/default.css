@@ -38,7 +38,7 @@ body{
 		color: #416eaf;
 	}
 	.navbar-default .navbar-nav>li>a {
-	    color: #969595;
+	    color: #c7213a;
 	    font-family: 'Lato', sans-serif;
 	    font-size: 14px;
 	    font-weight: bolder;
@@ -52,12 +52,12 @@ body{
 	    background-color: #f8f8f8;
 	}
 	.navbar-default .navbar-nav>li>a.active {
-	    color: #342764;
+	    color: #c7213a;
 	    background-color: #f8f8f8;
 	}
 	.header{
 		/* The image used */
-	    background-image: url('http://localhost/compro/asset/images/bg-header.jpg');
+	    background-image: url('http://localhost/compro/asset/images/slider-goat.jpeg');
 
 	    /* Set a specific height */
 	    min-height: 300px; 
@@ -68,9 +68,10 @@ body{
 	    background-size: cover;
 	    margin-top: 50px;
 		position: relative;
+		text-align: center;
 	}
 	.header .overlay{
-		background: rgba(52,39,100,0.65);
+		background: rgba(199,33,58,0.65);
 	    height: 300px;
 	    z-index: 2;
 	}
@@ -111,7 +112,7 @@ body{
 		margin: 30px 0 30px 0;
 	}
 	.btn-blued{
-		background-color: #342764;
+		background-color: #c7213a;
 		padding: 5px 10px;
 		font-size: 14px;
 		color: #fff;
@@ -119,7 +120,7 @@ body{
 		font-weight: bolder;
 	}
 	.btn-blued:hover{
-		background-color: #5179b0;
+		background-color: #c4737f;
 	}
 	.service{
 		background-color: #f9f9f9;
@@ -159,7 +160,7 @@ body{
 		padding: 0 0 20px 0;
 	}
 	.testimoni-left{
-		background:url('http://localhost/compro/asset/images/bg-testimoni.jpg');
+		background:url('http://localhost/compro/asset/images/bg-testi.jpg');
 		background-position: center;
 		background-size: cover;
 		height: 250px;
@@ -172,7 +173,7 @@ body{
 	    margin-left: auto;
 	}
 	.testimoni-left .overlay{
-		background: rgba(52,39,100,0.75);
+		background: rgba(199,33,58,0.75);
 	    height: 100%;
 	    z-index: 2;
 	}
@@ -282,7 +283,7 @@ body{
 		color: #416eaf;
 	}
 	.navbar-default .navbar-nav>li>a {
-	    color: #969595;
+	    color: #c7213a;
 	    font-family: 'Lato', sans-serif;
 	    font-size: 14px;
 	    font-weight: bolder;
@@ -294,7 +295,7 @@ body{
 	    background-color: #f8f8f8;
 	}
 	.navbar-default .navbar-nav>li>a.active {
-	    color: #342764;
+	    color: #c7213a;
 	    background-color: #f8f8f8;
 	}
 	.logo img{
@@ -303,7 +304,7 @@ body{
 	}
 	.header{
 		/* The image used */
-	    background-image: url('http://localhost/compro/asset/images/bg-header.jpg');
+	    background-image: url('http://localhost/compro/asset/images/slider-goat.jpeg');
 
 	    /* Set a specific height */
 	    min-height: 500px; 
@@ -314,9 +315,10 @@ body{
 	    background-size: cover;
 	    margin-top: 100px;
 		position: relative;
+		text-align: center;
 	}
 	.header .overlay{
-		background: rgba(52,39,100,0.65);
+		background: rgba(199,33,58,0.65);
 	    height: 500px;
 	    z-index: 2;
 	}
@@ -358,7 +360,7 @@ body{
 		margin: 30px 0 30px 0;
 	}
 	.btn-blued{
-		background-color: #342764;
+		background-color: #c7213a;
 		padding: 10px 25px;
 		font-size: 16px;
 		color: #fff;
@@ -366,7 +368,7 @@ body{
 		font-weight: bolder;
 	}
 	.btn-blued:hover{
-		background-color: #5179b0;
+		background-color: #c4737f;
 	}
 	.service{
 		background-color: #f9f9f9;
@@ -406,7 +408,7 @@ body{
 		padding-bottom: 0;
 	}
 	.testimoni-left{
-		background:url('http://localhost/compro/asset/images/bg-testimoni.jpg');
+		background:url('http://localhost/compro/asset/images/bg-testi.jpg');
 		background-position: center;
 		background-size: cover;
 		height: 550px;
@@ -419,7 +421,7 @@ body{
 	    margin-left: auto;
 	}
 	.testimoni-left .overlay{
-		background: rgba(52,39,100,0.75);
+		background: rgba(199,33,58,0.75);
 	    height: 100%;
 	    z-index: 2;
 	}

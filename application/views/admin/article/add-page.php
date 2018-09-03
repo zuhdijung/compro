@@ -28,8 +28,32 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Link Page</label>
+                                                <input type="text" class="form-control border-input" placeholder="Link Page" name="link_page" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>Page</label>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" name="page"></textarea>
+                                                <textarea name="page" class="textarea form-control border-input" placeholder="Here can be your description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Description</label>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Meta Description" name="meta_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Meta Keywords</label>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Meta Keywords (Separate by Comma)" name="meta_keywords"></textarea>
                                             </div>
                                         </div>
                                     </div>

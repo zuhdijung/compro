@@ -6,31 +6,57 @@
 
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Belajar Kuy
+                <a href="<?php echo base_url('administrator')?>" class="simple-text">
+                    <?php
+                        $result = $this->mod->getDataWhere('setting','id_setting',1);
+                        echo $result['title_website'];
+                    ?>
                 </a>
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="<?php echo base_url('administrator'); ?>">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-
-                <li>
+                <li class="active">
                     <a href="<?php echo base_url('administrator/user/manage-user');?>">
                         <i class="ti-user"></i>
-                        <p>User</p>
+                        <p>Data Siswa</p>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url('administrator/article/manage');?>">
+                        <i class="ti-user"></i>
+                        <p>Data User</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/article/manage');?>">
+                        <i class="ti-list"></i>
+                        <p>Keuangan</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/article/manage');?>">
+                        <i class="ti-list"></i>
+                        <p>Absensi</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('administrator/article/manage');?>">
+                        <i class="ti-clipboard"></i>
+                        <p>Laporan</p>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="<?php echo base_url('administrator/article/manage');?>">
                         <i class="ti-text"></i>
                         <p>Artcile</p>
                     </a>
-                </li>
+                </li> --><!-- 
                 <li>
                     <a href="<?php echo base_url('administrator/article/manage-category');?>">
                         <i class="ti-list"></i>
@@ -60,7 +86,7 @@
                         <i class="ti-settings"></i>
                         <p>Setting</p>
                     </a>
-                </li>
+                </li> -->
 
                 <!--<li>
                     <a href="<?php echo base_url('administrator/dashboard/user');?>">

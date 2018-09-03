@@ -27,3 +27,5 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url('asset/asset-admin/css/themify-icons.css');?>" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo base_url('asset/plugin/tinymce/js/tinymce/jquery.tinymce.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('asset/plugin/tinymce/js/tinymce/tinymce.min.js');?>"></script>

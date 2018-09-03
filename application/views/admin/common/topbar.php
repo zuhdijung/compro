@@ -11,7 +11,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        <!-- <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-panel"></i>
                                 <p>Stats</p>
@@ -31,7 +31,7 @@
                                 <li><a href="#">Notification 4</a></li>
                                 <li><a href="#">Another notification</a></li>
                               </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="<?php echo base_url('administrator/dashboard/logout');?>">
                                 <i class="ti-power-off"></i>

@@ -44,6 +44,7 @@ class Menu extends CI_Controller {
         $data['title'] = 'Add Menu | Administrator';
         $data['path_content'] = 'admin/menu/add-menu';
          $this->form_validation->set_rules('menu','Menu','required');
+         $this->form_validation->set_rules('link_menu','Link Menu','required');
          $this->form_validation->set_rules('id_parent','Parent','numeric');
          $this->form_validation->set_rules('sort_order','Short Order','required|numeric');
         $data['menu'] = $this->mod->fetchDataWhere('menu','id_parent',0);
@@ -56,6 +57,8 @@ class Menu extends CI_Controller {
             $array = array(
                     'menu' => $data['menu'],
                     'id_parent' => $data['id_parent'],
+                    'link_menu' => $data['link_menu'],
+                    'internal_link' => $data['internal_link'],
                     'sort_order' => $data['sort_order'],
                     'hierarchy' => $data['hierarchy']
                 );
@@ -67,10 +70,8 @@ class Menu extends CI_Controller {
      public function edit_menu(){
         $data['title'] = 'Edit Menu | Administrator';
         $data['path_content'] = 'admin/menu/edit-menu';
-       $id =$this->uri->segment(4);
-        $data['result'] = $this->mod->getDataWhere('menu','menu',$id);
-         $data['result'] = $this->mod->getDataWhere('id_parent','id_parent',$id);
-          $data['result'] = $this->mod->getDataWhere('sort_order','sort_order',$id);
+        $id = $this->uri->segment(4);
+        $data['result'] = $this->mod->getDataWhere('menu','id_menu',$id);
         if($data['result'] == false)
             redirect(base_url('administrator/menu/manage-menu'));
 
@@ -86,11 +87,12 @@ class Menu extends CI_Controller {
             $array = array(
                     'menu' => $data['menu'],
                     'id_parent' => $data['id_parent'],
-                    'sort_order' => $data['sort_order']
+                    'link_menu' => $data['link_menu'],
+                    'internal_link' => $data['internal_link'],
+                    'sort_order' => $data['sort_order'],
+                    'hierarchy' => $data['hierarchy']
                 );
-            $this->mod->editData($array,'menu','menu',$id);
-            $this->mod->editData($array,'id_parent','id_parent',$id);
-            $this->mod->editData($array,'sort_order','sort_order',$id);
+            $this->mod->editData($array,'menu','id_menu',$id);
             redirect(base_url('administrator/menu/manage-menu'));
         }
         $this->load->view('admin/dashboard', $data);
@@ -98,9 +100,8 @@ class Menu extends CI_Controller {
     }
     public function delete_menu(){
         $id = $this->uri->segment(4);
-        $this->mod->deleteData('menu','menu',$id);
-        $this->mod->deleteData('id_parent','id_parent',$id);
-        $this->mod->deleteData('sort_order','sort_order',$id);
+        $this->mod->deleteData('menu','id_menu',$id);
+        $this->mod->deleteData('menu','id_parent',$id);
         redirect(base_url($this->uri->segment(1).'/menu/manage-menu'));
     }
 

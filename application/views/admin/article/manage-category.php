@@ -36,7 +36,7 @@
                                                    <td>
                                                        <a href="<?php echo base_url('administrator/article/edit-category/'.$row->id_category)?>">
                                                     <i class="ti-pencil"></i></a>
-                                                    <a href="<?php echo base_url('administrator/article/delete-category/'.$row->id_category)?>">
+                                                    <a href="<?php echo base_url('administrator/article/delete-category/'.$row->id_category)?>" onclick="return confirm('Are You Sure Want to Delete this Data?')">
                                                     <i class="ti-trash"></i></a>
                                                    </td>
                                                </tr>

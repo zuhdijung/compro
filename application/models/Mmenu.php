@@ -15,7 +15,7 @@ class Mmenu extends CI_Model {
 	      $this->db->limit($limit,($pagenumber*$limit)-$limit);
 	    else
 	      $this->db->limit($limit,$start);
-	    $this->db->order_by('sort_order','DESC');
+	    $this->db->order_by('sort_order','ASC');
 	    
 	    $this->db->where('id_parent', 0); 
 	    $query = $this->db->get('menu');

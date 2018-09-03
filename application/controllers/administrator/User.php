@@ -90,11 +90,13 @@ class User extends CI_Controller {
 			$array = array(
 					'username' => $data['username'],
 					'email' => $data['email'],
-					'fullname' => $data['fullname'],
 					'permission' => $data['permission'],
 				);
-			if($data['password'] != '')
-				$array['password'] = md5($data['password']);
+			if($data['password'] != ''){
+				$enc = ')(*belajarkuy!@#';
+				$encrypted = md5($enc.$this->input->post('password').$enc);
+				$array['password'] = $encrypted;
+			}
 			$this->mod->editData($array,'user','id_user',$id);
 			redirect(base_url('administrator/user/manage-user'));
 		}

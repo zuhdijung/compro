@@ -7,10 +7,10 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Halo, <?php  echo $this->session->userdata('username')?>
-                                <p class="category">24 Hours performance</p>
+                                <!-- <p class="category">24 Hours performance</p> -->
                             </div>
                             <div class="content">
-                                <div id="chartHours" class="ct-chart"></div>
+                                <!-- <div id="chartHours" class="ct-chart"></div>
                                 <div class="footer">
                                     <div class="chart-legend">
                                         <i class="fa fa-circle text-info"></i> Open
@@ -21,7 +21,8 @@
                                     <div class="stats">
                                         <i class="ti-reload"></i> Updated 3 minutes ago
                                     </div>
-                                </div>
+                                </div> -->
+                                Welcome to Administrator Page
                             </div>
                         </div>
                     </div>
