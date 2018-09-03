@@ -21,7 +21,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="active">
+                <!-- <li class="active">
                     <a href="<?php echo base_url('administrator/user/manage-user');?>">
                         <i class="ti-user"></i>
                         <p>Data Siswa</p>
@@ -50,7 +50,7 @@
                         <i class="ti-clipboard"></i>
                         <p>Laporan</p>
                     </a>
-                </li>
+                </li> -->
                 <!-- <li>
                     <a href="<?php echo base_url('administrator/article/manage');?>">
                         <i class="ti-text"></i>
@@ -88,7 +88,7 @@
                     </a>
                 </li> -->
 
-                <!--<li>
+                <li>
                     <a href="<?php echo base_url('administrator/dashboard/user');?>">
                         <i class="ti-user"></i>
                         <p>User Profile</p>
@@ -129,6 +129,6 @@
                         <i class="ti-export"></i>
                         <p>Upgrade to PRO</p>
                     </a>
-                </li>-->
+                </li>
             </ul>
         </div>
